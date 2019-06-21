@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>%2F2019%2F06%2F19%2Fhell%2F</url>
-    <content type="text"><![CDATA[sdadasda]]></content>
+    <title><![CDATA[python之路]]></title>
+    <url>%2F2019%2F06%2F22%2F1%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>-pyton -test</tag>
+      </tags>
   </entry>
   <entry>
-    <title><![CDATA[test.md]]></title>
-    <url>%2F2017%2F06%2F20%2Ftest-md%2F</url>
-    <content type="text"><![CDATA[dasdasd,asld]]></content>
-      <tags>
-        <tag>test</tag>
-      </tags>
+    <title><![CDATA[算法之路]]></title>
+    <url>%2F2017%2F06%2F22%2F1%2F</url>
+    <content type="text"></content>
   </entry>
 </search>
