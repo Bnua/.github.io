@@ -1933,7 +1933,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a422ff;
+  background: #4de80b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3240,7 +3240,7 @@ pre .javascript .function {
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 body {
-  background: url("/images/beijing.jpg");
+  background: url("/images/beijing.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -3248,8 +3248,8 @@ body {
 }
 .main-inner {
   background: #fff;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .header-inner {
-  opacity: 0.8;
+  opacity: 0.9;
 }
