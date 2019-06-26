@@ -90,7 +90,8 @@
 <meta property="og:description" content="&amp;emsp;&amp;emsp;本文主要是对《推荐系统技术 评估及高效算法》以及《推荐系统实战》两本书的总结，在后续的文章中会逐渐补充详细内容。 1. 推荐系统思维导图梳理 2. 推荐引擎架构&amp;emsp;&amp;emsp;推荐引擎使用一种或几种用户特征，按照一种推荐策略生成一种类型物品的推荐列表。  推荐系统引擎框架主要分为三个部分： A部分负责从数据库或者缓存中拿到用户行为数据，通过分析不同行为，生成当前用户">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/rs.png">
-<meta property="og:updated_time" content="2019-06-26T17:22:23.313Z">
+<meta property="og:image" content="http://yoursite.com/images/tuijianyinqing.png">
+<meta property="og:updated_time" content="2019-06-26T17:28:56.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="推荐系统思维导图与架构">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;本文主要是对《推荐系统技术 评估及高效算法》以及《推荐系统实战》两本书的总结，在后续的文章中会逐渐补充详细内容。 1. 推荐系统思维导图梳理 2. 推荐引擎架构&amp;emsp;&amp;emsp;推荐引擎使用一种或几种用户特征，按照一种推荐策略生成一种类型物品的推荐列表。  推荐系统引擎框架主要分为三个部分： A部分负责从数据库或者缓存中拿到用户行为数据，通过分析不同行为，生成当前用户">
@@ -562,9 +563,7 @@ window.onmouseout = function () {
 </ul>
 </li>
 </ul>
-<div align="center">
-![](/images/tuijianyinqing.png)
-</div>
+<p><img src="/images/tuijianyinqing.png" alt></p>
 <center>推荐引擎架构图</center>
 
 <h2 id="emsp-2-1-生成用户特征向量"><a href="#emsp-2-1-生成用户特征向量" class="headerlink" title="&emsp;2.1 生成用户特征向量"></a>&emsp;2.1 生成用户特征向量</h2><p>&emsp;&emsp;一般来说，用户的特征包括两种，一种是用户的注册信息中可以提取出来的，主要包括用户的人口统计学特征。对于使用这种特征的推荐引擎，如果内存够，可以将存储这些特征的信息直接缓存在内存中，在推荐时直接拿到用户的特征数据并生成特征向量。除了这种特征，另一种特征主要是从用户的行为中计算出来的，本节着重讨论如何生成特征。<br>&emsp;&emsp;一个特征向量由特征以及特征的权重组成，在利用用户行为计算特征向量时需要考虑以下因素。<br>&emsp;&emsp;<strong>用户行为的种类</strong> &emsp;在一个网站中，用户可以对物品产生很多不同种类的行为。用户可以浏览物品、单击物品的链接、收藏物品、给物品打分、购买物品、评论物品、给物品打上不同的标签、和好友分享物品、搜索不同的关键词等。这些行为都会对物品特征的权<br>重产生影响，但不同行为的影响不同，大多时候很难确定什么行为更加重要，一般的标准就是用户付出代价越大的行为权重越高。比如，购买物品需要用户掏钱，所以用户一定会三思而后行，因此购买行为最为重要。相反，浏览物品的网页代价很小，所以这种行为对反映用户的真实兴趣的影响很小。<br>&emsp;&emsp;<strong>用户行为产生的时间</strong>&emsp;一般来说，用户近期的行为比较重要，而用户很久之前的行为相对比较次要。因此，如果用户最近购买过某一个物品，那么这个物品对应的特征将会具有比较高的权重。<br>&emsp;&emsp;<strong>用户行为的次数</strong>&emsp;有时用户对一个物品会产生很多次行为。比如用户会听一首歌很多次，看一部电视剧的很多集等。因此用户对同一个物品的同一种行为发生的次数也反映了用户对物品的兴趣，行为次数多的物品对应的特征权重越高。<br>&emsp;&emsp;<strong>物品的热门程度</strong>&emsp;如果用户对一个很热门的物品产生了行为，往往不能代表用户的个性，因为用户可能是在跟风，可能对该物品并没有太大兴趣，特别是在用户对一个热门物品产生了偶尔几次不重要的行为（比如浏览行为）时，就更说明用户对这个物品可能没有什么兴趣，可能只是因为这个物品的链接到处都是，很容易点到而已。反之，如果用户对一个不热门的物品产生了行为，就说明了用户的个性需求。因此，推荐引擎在生成用户特征时会加重不热门物品对应的特征的权重。</p>
