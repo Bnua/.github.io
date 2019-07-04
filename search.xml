@@ -58,4 +58,15 @@
         <tag>itchat</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[Ubuntu下mysql的安装问题总结]]></title>
+    <url>%2F2017%2F11%2F12%2F1%2F</url>
+    <content type="text"><![CDATA[1. mysql的安装 系统：Ubuntu Server 16.04.1 LTS 64位 1234#安装 MySQL 服务端sudo apt-get install mysql-server#安装 MySQL 客户端sudo apt-get install mysql-client 安装过程中自己设置root密码 12#查看是否安装成功sudo netstat -tap | grep mysql 查看是否安装成功，如果出现如下提示，则安装成功 12ubuntu@VM-0-11-ubuntu:~$ sudo netstat -tap | grep mysqltcp 0 0 localhost.localdo:mysql *:* LISTEN 25092/mysqld 使用如下两条命令，打开 MySQL 服务并使用 root 用户登录： 1234# 启动 MySQL 服务sudo service mysql start# 使用 root 用户登录，实验楼环境的密码为空，直接回车就可以登录mysql -uroot -p 在安装过程会提示输入密码，但是输入的密码没有作用，并且出现如下的错误，我把自己怎么改的教程直接贴出来，照着我的改然后重新登录就可以了。 错误:&emsp;ERROR 1045 (28000): Access denied for user &#39;root&#39;@&#39;localhost&#39; 1234567891011121314151617181920212223#使用sudo cat /etc/mysql/debian.cnf查看用户名密码ubuntu@VM-0-11-ubuntu:~$ sudo cat /etc/mysql/debian.cnf [client]host = localhostuser = debin-sys-matpassword = he5gNV6mzFoxQcsocket = /var/run/mysqld/mysqld.sock[mysql_upgrade]host = localhostuser = debin-sys-matpassword = he5gNV6mzFoxQcsocket = /var/run/mysqld/mysqld.sock用户以及密码#出现的user=debin-sys-mat是用户名，password = he5gNV6mzFoxQc为密码#用查询到的用户名以及密码登陆mysql -udebin-sys-mat -phe5gNV6mzFoxQc#注意用户名和密码之前分别有 -u和-p#用下边命令改root密码update user set authentication_string=password(&apos;要改的密码&apos;) where user=&quot;root&quot;;#mysql 新设置用户或更改密码后需用flush privileges刷新MySQL的系统权限相关表，否则会出现拒绝访问。flush privileges; 这样就安装好并且可以使用mysql。]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
 </search>
