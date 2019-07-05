@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MYSQL基础操作总结（一）]]></title>
+    <url>%2F2019%2F11%2F13%2F1%2F</url>
+    <content type="text"><![CDATA[本文是对mysql基础操作的一个简单总结，同学们，可以点击这个链接在线实战。实验楼mysql基础教程在开始之前，例如其他编程语言一样,mysql同样有自己的数据类型,建议大家可以阅读这篇文章mysql数据类型 1. 创建并使用数据库创建数据库 1CREATE DATABASE &lt;数据库名字&gt;; 由于一个系统中可能会有多个数据库，要确定当前是对哪一个数据库操作，使用语句 123use &lt;数据库名字&gt;;&gt; 段落引用 查看当前数据库里有几张表 1show tables; 数据表示是数据库最重要的组成部分之一。一个数据库中一般会有多张表，这些各自独立的表通过建立关系被联接起来，才成为可以数据库。如下便是一张表：| id | name |phone || :——–: | :—–: | :—-: || 01 | xiaoma | 110 || 02 | xiaohu | 112 || 03 | xiaozhang | 123 |在数据库中新建一张表的语句格式为： 123456CREATE TABLE 表的名字(列名a 数据类型(数据长度),列名b 数据类型(数据长度)，列名c 数据类型(数据长度)); 查看新建表中的内容 1SELECT * FROM &lt;数据表的名字&gt;; 使用语句向表中插入数据 1INSERT INTO 表的名字(列名a,列名b,列名c) VALUES(值1,值2,值3); 2. mysql的约束约束是一种限制，通过对表的行或列做出数据限制，来确保数据的完整性，唯一性等。 2.1 约束的种类 主键 PRIMARY KEY 默认值 DEFAULT 唯一 UNIQUE 外键 FOREIGN KEY 非空 NOT NULL2.1.1 主键约束主键 (PRIMARY KEY)是用于约束表中的一行，作为这一行的唯一标识符，在一张表中通过主键就能准确定位到一行，因此主键十分重要，主键不能有重复记录且不能为空。给某个字段添加主键约束之后，该字段不能重复也不能为空，效果和”not nullunique”约束相同，但是本质不同。主键约束除了可以做到”not null unique”之外，还会默认添加”索引”2.1.2 默认值约束DEFAULT 约束只会在使用 INSERT 语句（上一实验介绍过）时体现出来， INSERT 语句中，如果被 DEFAULT 约束的位置没有值，那么这个位置将会被 DEFAULT 的值填充。使用场景:默认值经常会使用在一些可有可无的字段，比如个性签名中，如果没有数据就会默认为空或者一个默认的文本2.1.2 唯一约束唯一约束 (UNIQUE) 比较简单，它规定一张表中指定的一列的值必须不能有重复值，即这一列每个值都是唯一的。2.1.3 外键约束若有两个表A、B，id是A的主键，而B中也有id字段，则id就是表B的外键，外键约束主要用来维护两个表之间数据的一致性。一个表可以有多个外键，每个外键必须 REFERENCES(参考)另一个表的主键，被外键约束的列，取值必须在它参考的列中有对应值1foreign key&lt;classno)&gt; references t_class(cno) 上述就表示当前表中字段 classno 是和表 t_class 中字段 cno 保持一致。 2.1.4 非空约束非空约束 (NOT NULL),听名字就能理解，被非空约束的列，在插入值时必须非空。 3. 查询语句SELECT语句的基本格式 1234SELECT column_name,column_nameFROM table_name[WHERE Clause][LIMIT N][ OFFSET M] 使用一个或者多个表，表之间使用逗号(,)分割，并使用WHERE语句来设定查询条件。 SELECT 命令可以读取一条或者多条记录。 使用星号（*）来代替其他字段，SELECT语句会返回表的所有字段数据 使用 WHERE 语句来包含任何条件。 使用 LIMIT 属性来设定返回的记录数。 通过OFFSET指定SELECT语句开始查询的数据偏移量。默认情况下偏移量为0。where语句其中where语句后边就和我们经常编程使用的if条件语句一样。这里只总结一下: 数学符号条件：=,&lt;,&gt;,&gt;=,&lt;= “AND 与 OR” “IN 与 NOT IN”通配符在这里详细介绍一下通配符通配符语句的基本格式1WHERE column_name LIKE &apos;通配符号&apos;; %：表示任意0个或多个字符。如下，既可以查出 “s”，“stt”，“sxxx”等 1WHERE column_name LIKE &apos;s%&apos;; _ ： 表示任意单个字符。匹配单个任意字符，它常用来限制表达式的字符长度语句：如下，只能查出S后边带两个字符的项 1WHERE column_name LIKE &apos;s__&apos;; [字符列] ：字符列中任何一个单一字符[^字符列] 或者[!字符列]: 不在字符列中的任何一个单一字符除了上边介绍的like进行mysql模糊查询外，还有一种正则表达式模糊查询 必须使用regexp关键字。mysql中正则表达式模糊查询使用格式结果排序ORDER BY 排序关键词。默认情况下，ORDER BY 的结果是升序排列，而使用关键词 ASC 和 DESC 可指定升序或降序排序。语句格式如下 1SELECT column_name,column_name,e FROM table ORDER BY column_name DESC;]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MYSQL基础操作总结(一)]]></title>
+    <url>%2F2019%2F07%2F06%2F1%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[推荐系统中的数据挖掘方法]]></title>
     <url>%2F2018%2F07%2F14%2F1%2F</url>
     <content type="text"><![CDATA[1. 推荐系统中的数据挖掘方法概览&emsp;&emsp;数据挖掘过程一般是由三个连续的执行步骤组成，本章不会过多的介绍这些方法，只是做一个总结，详细的过程以及公式推导建议大家去阅读《统计学方法》以及《推荐系统 技术、评估及高效算法》。。]]></content>
