@@ -61,9 +61,20 @@
   <entry>
     <title><![CDATA[MYSQL基础操作总结（二）]]></title>
     <url>%2F2017%2F11%2F15%2F1%2F</url>
-    <content type="text"><![CDATA[##1 数据库表的修改以及删除删除数据库 1DROP DATABASE &lt;数据库名字&gt;; 删除数据库中的表 1DROP TABLE &lt;表名字&gt;; 修改表的名字 1RENAME TABLE &lt;原名&gt; TO &lt;新名字&gt;; 表中新增加一列 1ALTER TABLE &lt;表名字&gt; ADD &lt;列名字&gt; &lt;数据类型&gt; &lt;约束&gt;; 具体增加到某一列后边使用after关键字 1ALTER TABLE &lt;表名字&gt; ADD &lt;列名字&gt; &lt;数据类型&gt; &lt;约束&gt; after &lt;某一列&gt;; 增加第一列后边使用first关键字 1ALTER TABLE &lt;表名字&gt; ADD &lt;列名字&gt; &lt;数据类型&gt; &lt;约束&gt; first; 修改数据类型 1ALTER TABLE &lt;表名字&gt; MODIFY &lt;列名字&gt; &lt;新数据类型&gt;; 修改表中某个值 1UPDATE &lt;表名字&gt; SET &lt;列1=值1&gt;,&lt;列2=值2&gt; WHERE &lt;条件&gt;; 删除一行记录 1DELETE FROM &lt;表名字&gt; WHERE &lt;条件&gt;; 2 其他基本操作视图：视图是从一个或多个表中导出来的表，是一种虚拟存在的表。它就像一个窗口，通过这个窗口可以看到系统专门提供的数据，这样，用户可以不用看到整个数据库中的数据，而只关心对自己有用的数据。创建视图 1CREATE VIEW &lt;视图名(列a,列b,列c)&gt; AS SELECT &lt;列1&gt;,&lt;列2&gt;,&lt;列3&gt; FROM &lt;表名字&gt; where &lt;条件&gt;; 纯数据文件导入：文件中将包含与数据表字段相对应的多条数据，这样可以快速导入大量数据。 1LOAD DATA INFILE &lt;文件路径和文件名&gt; INTO TABLE &lt;表名字&gt;; 注：由于导入导出大量数据都属于敏感操作，根据 mysql 的安全策略，导入导出的文件都必须在指定的路径下进行，在 mysql 终端中查看路径变量： 1show variables like &apos;%secure%&apos;; SQL 语句导入，语法为：source *.sql不同点：数据文件导入方式只包含数据，导入规则由数据库系统完成；SQL 文件导入相当于执行该文件中包含的 SQL 语句，可以实现多种操作，包括删除，更新，新增，甚至对数据库的重建。导出:与导入是相反的过程，是把数据库某个表中的数据保存到一个文件之中。导出语句基本格式为： 1SELECT 列1，列2 INTO OUTFILE &apos;文件路径和文件名&apos; FROM 表名字; 数据库备份 12mysqldump -u root 数据库名&gt;备份文件名; #备份整个数据库mysqldump -u root 数据库名 表名字&gt;备份文件名; #备份整个表 注：是在终端进行备份，不是在mysql中。数据库恢复第一种方法 123source \*.sql ``` **数据库恢复第二种方法** CREATE DATABASE shujuku; #新建一个名为shujuku的数据库 #再次 Ctrl+D 退出 MySQL：mysql -u root shujuku &lt; bak.sql #数据恢复到shujuku数据库 ## 3. 补充 还有一部分关于子查询，连接查询的，建议大家阅读这个博客[mysql子查询](https://www.cnblogs.com/chiangchou/p/mysql-3.html)]]></content>
+    <content type="text"><![CDATA[1. 数据库表的修改以及删除删除数据库 1DROP DATABASE &lt;数据库名字&gt;; 删除数据库中的表 1DROP TABLE &lt;表名字&gt;; 修改表的名字 1RENAME TABLE &lt;原名&gt; TO &lt;新名字&gt;; 表中新增加一列 1ALTER TABLE &lt;表名字&gt; ADD &lt;列名字&gt; &lt;数据类型&gt; &lt;约束&gt;; 具体增加到某一列后边使用after关键字 1ALTER TABLE &lt;表名字&gt; ADD &lt;列名字&gt; &lt;数据类型&gt; &lt;约束&gt; after &lt;某一列&gt;; 增加第一列后边使用first关键字 1ALTER TABLE &lt;表名字&gt; ADD &lt;列名字&gt; &lt;数据类型&gt; &lt;约束&gt; first; 修改数据类型 1ALTER TABLE &lt;表名字&gt; MODIFY &lt;列名字&gt; &lt;新数据类型&gt;; 修改表中某个值 1UPDATE &lt;表名字&gt; SET &lt;列1=值1&gt;,&lt;列2=值2&gt; WHERE &lt;条件&gt;; 删除一行记录 1DELETE FROM &lt;表名字&gt; WHERE &lt;条件&gt;; 2. 其他基本操作视图：视图是从一个或多个表中导出来的表，是一种虚拟存在的表。它就像一个窗口，通过这个窗口可以看到系统专门提供的数据，这样，用户可以不用看到整个数据库中的数据，而只关心对自己有用的数据。创建视图 1CREATE VIEW &lt;视图名(列a,列b,列c)&gt; AS SELECT &lt;列1&gt;,&lt;列2&gt;,&lt;列3&gt; FROM &lt;表名字&gt; where &lt;条件&gt;; 纯数据文件导入：文件中将包含与数据表字段相对应的多条数据，这样可以快速导入大量数据。 1LOAD DATA INFILE &lt;文件路径和文件名&gt; INTO TABLE &lt;表名字&gt;; 注：由于导入导出大量数据都属于敏感操作，根据 mysql 的安全策略，导入导出的文件都必须在指定的路径下进行，在 mysql 终端中查看路径变量： 1show variables like &apos;%secure%&apos;; SQL 语句导入，语法为：source *.sql不同点：数据文件导入方式只包含数据，导入规则由数据库系统完成；SQL 文件导入相当于执行该文件中包含的 SQL 语句，可以实现多种操作，包括删除，更新，新增，甚至对数据库的重建。导出:与导入是相反的过程，是把数据库某个表中的数据保存到一个文件之中。导出语句基本格式为： 1SELECT 列1，列2 INTO OUTFILE &apos;文件路径和文件名&apos; FROM 表名字; 数据库备份 12mysqldump -u root 数据库名&gt;备份文件名; #备份整个数据库mysqldump -u root 数据库名 表名字&gt;备份文件名; #备份整个表 注：是在终端进行备份，不是在mysql中。数据库恢复第一种方法 123source \*.sql ``` **数据库恢复第二种方法** CREATE DATABASE shujuku; #新建一个名为shujuku的数据库 #再次 Ctrl+D 退出 MySQL：mysql -u root shujuku &lt; bak.sql #数据恢复到shujuku数据库 ## 3. 补充 还有一部分关于子查询，连接查询的，建议大家阅读这个博客[mysql子查询](https://www.cnblogs.com/chiangchou/p/mysql-3.html)]]></content>
       <categories>
         <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MYSQL问题记录]]></title>
+    <url>%2F2017%2F11%2F14%2F1%2F</url>
+    <content type="text"><![CDATA[记录一个蠢蠢的问题在导入数据集的时候发现了如下一个error 1ERROR 1406 (22001): Data too long for column Google了好久，在 stackoverflow 找到了一个靠谱的答案，如下：暗自开心的按照教程改了一，结果完全没用，又走上了漫长的谷歌道路，改字符编码啊等等……吃饭的时候脑子闪过一个念头会不会是编辑器的问题啊。 在排查的过程中果然是，在vim下编辑会因为配置问题把TAB全部转换了成空格，mysql分隔符使用的是“TAB”,自然就报错。最后在补充一个知识点可以使用 FIELDS TERMINATED BY LINES TERMINATED BY关键字进行导入数据]]></content>
+      <categories>
+        <category>问题随笔</category>
       </categories>
       <tags>
         <tag>mysql</tag>

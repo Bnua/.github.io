@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="##1 数据库表的修改以及删除删除数据库 1DROP DATABASE &amp;lt;数据库名字&amp;gt;;  删除数据库中的表 1DROP TABLE &amp;lt;表名字&amp;gt;;  修改表的名字 1RENAME TABLE &amp;lt;原名&amp;gt; TO &amp;lt;新名字&amp;gt;;  表中新增加一列 1ALTER TABLE &amp;lt;表名字&amp;gt; ADD &amp;lt;列名字&amp;gt; &amp;lt;数据类型&amp;gt; &amp;l">
+<meta name="description" content="1. 数据库表的修改以及删除删除数据库 1DROP DATABASE &amp;lt;数据库名字&amp;gt;;  删除数据库中的表 1DROP TABLE &amp;lt;表名字&amp;gt;;  修改表的名字 1RENAME TABLE &amp;lt;原名&amp;gt; TO &amp;lt;新名字&amp;gt;;  表中新增加一列 1ALTER TABLE &amp;lt;表名字&amp;gt; ADD &amp;lt;列名字&amp;gt; &amp;lt;数据类型&amp;gt; &amp;lt">
 <meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MYSQL基础操作总结（二）">
 <meta property="og:url" content="http://yoursite.com/2017/11/15/1/index.html">
 <meta property="og:site_name" content="Meng Xu Dong">
-<meta property="og:description" content="##1 数据库表的修改以及删除删除数据库 1DROP DATABASE &amp;lt;数据库名字&amp;gt;;  删除数据库中的表 1DROP TABLE &amp;lt;表名字&amp;gt;;  修改表的名字 1RENAME TABLE &amp;lt;原名&amp;gt; TO &amp;lt;新名字&amp;gt;;  表中新增加一列 1ALTER TABLE &amp;lt;表名字&amp;gt; ADD &amp;lt;列名字&amp;gt; &amp;lt;数据类型&amp;gt; &amp;l">
+<meta property="og:description" content="1. 数据库表的修改以及删除删除数据库 1DROP DATABASE &amp;lt;数据库名字&amp;gt;;  删除数据库中的表 1DROP TABLE &amp;lt;表名字&amp;gt;;  修改表的名字 1RENAME TABLE &amp;lt;原名&amp;gt; TO &amp;lt;新名字&amp;gt;;  表中新增加一列 1ALTER TABLE &amp;lt;表名字&amp;gt; ADD &amp;lt;列名字&amp;gt; &amp;lt;数据类型&amp;gt; &amp;lt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-07T17:00:45.957Z">
+<meta property="og:updated_time" content="2019-07-07T17:05:37.186Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MYSQL基础操作总结（二）">
-<meta name="twitter:description" content="##1 数据库表的修改以及删除删除数据库 1DROP DATABASE &amp;lt;数据库名字&amp;gt;;  删除数据库中的表 1DROP TABLE &amp;lt;表名字&amp;gt;;  修改表的名字 1RENAME TABLE &amp;lt;原名&amp;gt; TO &amp;lt;新名字&amp;gt;;  表中新增加一列 1ALTER TABLE &amp;lt;表名字&amp;gt; ADD &amp;lt;列名字&amp;gt; &amp;lt;数据类型&amp;gt; &amp;l">
+<meta name="twitter:description" content="1. 数据库表的修改以及删除删除数据库 1DROP DATABASE &amp;lt;数据库名字&amp;gt;;  删除数据库中的表 1DROP TABLE &amp;lt;表名字&amp;gt;;  修改表的名字 1RENAME TABLE &amp;lt;原名&amp;gt; TO &amp;lt;新名字&amp;gt;;  表中新增加一列 1ALTER TABLE &amp;lt;表名字&amp;gt; ADD &amp;lt;列名字&amp;gt; &amp;lt;数据类型&amp;gt; &amp;lt">
 
 
 
@@ -549,7 +549,7 @@ window.onmouseout = function () {
       
 
       
-        <p>##1 数据库表的修改以及删除<br><strong>删除数据库</strong></p>
+        <h2 id="1-数据库表的修改以及删除"><a href="#1-数据库表的修改以及删除" class="headerlink" title="1. 数据库表的修改以及删除"></a>1. 数据库表的修改以及删除</h2><p><strong>删除数据库</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP DATABASE &lt;数据库名字&gt;;</span><br></pre></td></tr></table></figure>
 
 <p><strong>删除数据库中的表</strong></p>
@@ -576,7 +576,7 @@ window.onmouseout = function () {
 <p><strong>删除一行记录</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM &lt;表名字&gt; WHERE &lt;条件&gt;;</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-其他基本操作"><a href="#2-其他基本操作" class="headerlink" title="2 其他基本操作"></a>2 其他基本操作</h2><p><strong>视图</strong>：视图是从一个或多个表中导出来的表，是一种虚拟存在的表。它就像一个窗口，通过这个窗口可以看到系统专门提供的数据，这样，用户可以不用看到整个数据库中的数据，而只关心对自己有用的数据。<br><strong>创建视图</strong></p>
+<h2 id="2-其他基本操作"><a href="#2-其他基本操作" class="headerlink" title="2. 其他基本操作"></a>2. 其他基本操作</h2><p><strong>视图</strong>：视图是从一个或多个表中导出来的表，是一种虚拟存在的表。它就像一个窗口，通过这个窗口可以看到系统专门提供的数据，这样，用户可以不用看到整个数据库中的数据，而只关心对自己有用的数据。<br><strong>创建视图</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE VIEW &lt;视图名(列a,列b,列c)&gt; AS SELECT &lt;列1&gt;,&lt;列2&gt;,&lt;列3&gt; FROM &lt;表名字&gt; where &lt;条件&gt;;</span><br></pre></td></tr></table></figure>
 
 <p><strong>纯数据文件导入</strong>：文件中将包含与数据表字段相对应的多条数据，这样可以快速导入大量数据。    </p>
@@ -656,8 +656,8 @@ window.onmouseout = function () {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/13/1/" rel="next" title="MYSQL基础操作总结（一）">
-                <i class="fa fa-chevron-left"></i> MYSQL基础操作总结（一）
+              <a href="/2017/11/14/1/" rel="next" title="MYSQL问题记录">
+                <i class="fa fa-chevron-left"></i> MYSQL问题记录
               </a>
             
           </div>
@@ -747,7 +747,7 @@ window.onmouseout = function () {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -758,7 +758,7 @@ window.onmouseout = function () {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -837,7 +837,7 @@ window.onmouseout = function () {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-其他基本操作"><span class="nav-text">2 其他基本操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数据库表的修改以及删除"><span class="nav-text">1. 数据库表的修改以及删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-其他基本操作"><span class="nav-text">2. 其他基本操作</span></a></li></ol></div>
             
 
           </div>
