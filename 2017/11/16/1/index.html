@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="1. MYSQL中的用户变量和系统变量1.1 用户变量可以先在用户变量中保存值然后在以后引用它；这样可以将值从一个语句传递到另一个语句。用户变量与连接有关。也就是说，一个客户端定义的变量不能被其它客户端看到或使用。当客户端退出时，该客户端连接的所有变量将自动释放。用户变量的形式为@var_name，其中变量名var_name可以由当前字符集的文字数字字符、‘.’、‘_’和‘$’组成。 默认字符集是">
+<meta name="description" content="MYSQL中的delimiter详解命令行客户端中，如果有一行命令以分号结束，那么回车后，mysql将会执行该命令。如输入下面的语句mysql&amp;gt; select * from test_table;然后回车，那么MySQL将立即执行该语句。但有时候，不希望MySQL这么做。在为可能输入较多的语句，且语句中包含有分号。如下： 12345678910111213141516171819202122">
 <meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MYSQL中用户变量和系统变量">
+<meta property="og:title" content="mysql中的DELIMITER详解">
 <meta property="og:url" content="http://yoursite.com/2017/11/16/1/index.html">
 <meta property="og:site_name" content="Meng Xu Dong">
-<meta property="og:description" content="1. MYSQL中的用户变量和系统变量1.1 用户变量可以先在用户变量中保存值然后在以后引用它；这样可以将值从一个语句传递到另一个语句。用户变量与连接有关。也就是说，一个客户端定义的变量不能被其它客户端看到或使用。当客户端退出时，该客户端连接的所有变量将自动释放。用户变量的形式为@var_name，其中变量名var_name可以由当前字符集的文字数字字符、‘.’、‘_’和‘$’组成。 默认字符集是">
+<meta property="og:description" content="MYSQL中的delimiter详解命令行客户端中，如果有一行命令以分号结束，那么回车后，mysql将会执行该命令。如输入下面的语句mysql&amp;gt; select * from test_table;然后回车，那么MySQL将立即执行该语句。但有时候，不希望MySQL这么做。在为可能输入较多的语句，且语句中包含有分号。如下： 12345678910111213141516171819202122">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-08T08:52:00.758Z">
+<meta property="og:updated_time" content="2019-07-08T16:20:03.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MYSQL中用户变量和系统变量">
-<meta name="twitter:description" content="1. MYSQL中的用户变量和系统变量1.1 用户变量可以先在用户变量中保存值然后在以后引用它；这样可以将值从一个语句传递到另一个语句。用户变量与连接有关。也就是说，一个客户端定义的变量不能被其它客户端看到或使用。当客户端退出时，该客户端连接的所有变量将自动释放。用户变量的形式为@var_name，其中变量名var_name可以由当前字符集的文字数字字符、‘.’、‘_’和‘$’组成。 默认字符集是">
+<meta name="twitter:title" content="mysql中的DELIMITER详解">
+<meta name="twitter:description" content="MYSQL中的delimiter详解命令行客户端中，如果有一行命令以分号结束，那么回车后，mysql将会执行该命令。如输入下面的语句mysql&amp;gt; select * from test_table;然后回车，那么MySQL将立即执行该语句。但有时候，不希望MySQL这么做。在为可能输入较多的语句，且语句中包含有分号。如下： 12345678910111213141516171819202122">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>MYSQL中用户变量和系统变量 | Meng Xu Dong</title>
+  <title>mysql中的DELIMITER详解 | Meng Xu Dong</title>
   
 
 
@@ -441,7 +441,7 @@ window.onmouseout = function () {
 
         
         
-          <h2 class="post-title" itemprop="name headline">MYSQL中用户变量和系统变量</h2>
+          <h2 class="post-title" itemprop="name headline">mysql中的DELIMITER详解</h2>
         
 
         <div class="post-meta">
@@ -453,7 +453,7 @@ window.onmouseout = function () {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-16T16:50:36+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-16T00:18:43+08:00">
                 2017-11-16
               </time>
             
@@ -512,7 +512,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k 字
+                  269 字
                 </span>
               
 
@@ -528,7 +528,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  1 分钟
                 </span>
               
             </div>
@@ -549,29 +549,10 @@ window.onmouseout = function () {
       
 
       
-        <h2 id="1-MYSQL中的用户变量和系统变量"><a href="#1-MYSQL中的用户变量和系统变量" class="headerlink" title="1. MYSQL中的用户变量和系统变量"></a>1. MYSQL中的用户变量和系统变量</h2><h3 id="1-1-用户变量"><a href="#1-1-用户变量" class="headerlink" title="1.1 用户变量"></a>1.1 用户变量</h3><p>可以先在用户变量中保存值然后在以后引用它；这样可以将值从一个语句传递到另一个语句。用户变量与连接有关。也就是说，一个客户端定义的变量不能被其它客户端看到或使用。当客户端退出时，该客户端连接的所有变量将自动释放。<br>用户变量的形式为@var_name，其中变量名var_name可以由当前字符集的文字数字字符、‘.’、‘_’和‘$’组成。 默认字符集是cp1252 (Latin1)。可以用mysqld的–default-character-set选项更改字符集，用户变量名对大小写不敏感。<br>设置用户变量的两种语句形式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SET @var_name = expr [, @var_name = expr] ...</span><br><span class="line">SELECT @var_name := expr [, @var_name = expr] ...</span><br></pre></td></tr></table></figure>
+        <h3 id="MYSQL中的delimiter详解"><a href="#MYSQL中的delimiter详解" class="headerlink" title="MYSQL中的delimiter详解"></a><strong>MYSQL中的delimiter详解</strong></h3><p>命令行客户端中，如果有一行命令以分号结束，<br>那么回车后，mysql将会执行该命令。如输入下面的语句<br>mysql&gt; select * from test_table;<br>然后回车，那么MySQL将立即执行该语句。<br>但有时候，不希望MySQL这么做。在为可能输入较多的语句，且语句中包含有分号。<br>如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE test_db;</span><br><span class="line">USE test_db;</span><br><span class="line">CREATE TABLE test1(a1 INT);</span><br><span class="line">CREATE TABLE test2(a2 INT);</span><br><span class="line">CREATE TABLE test3(a3 INT NOT NULL AUTO_INCREMENT PRIMARY KEY);</span><br><span class="line">CREATE TABLE test4(</span><br><span class="line">  a4 INT NOT NULL AUTO_INCREMENT PRIMARY KEY, </span><br><span class="line">  b4 INT DEFAULT 0</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">DELIMITER |</span><br><span class="line"></span><br><span class="line">CREATE TRIGGER testref BEFORE INSERT ON test1</span><br><span class="line">  FOR EACH ROW BEGIN</span><br><span class="line">    INSERT INTO test2 SET a2 = NEW.a1;</span><br><span class="line">    DELETE FROM test3 WHERE a3 = NEW.a1;  </span><br><span class="line">    UPDATE test4 SET b4 = b4 + 1 WHERE a4 = NEW.a1;</span><br><span class="line">  END</span><br><span class="line">|</span><br><span class="line"></span><br><span class="line">DELIMITER ;</span><br><span class="line"></span><br><span class="line">INSERT INTO test3 (a3) VALUES </span><br><span class="line">  (NULL), (NULL), (NULL), (NULL), (NULL), </span><br><span class="line">  (NULL), (NULL), (NULL), (NULL), (NULL);</span><br><span class="line"></span><br><span class="line">INSERT INTO test4 (a4) VALUES </span><br><span class="line">  (0), (0), (0), (0), (0), (0), (0), (0), (0), (0);</span><br></pre></td></tr></table></figure>
 
-<p>对于 SET，可以使用=或:=作为分配符。分配给每个变量的expr可以为整数、实数、字符串或者NULL值。<br>对于 SELECR，分配符必须为:=而不能用=，因为在非SET语句中=被视为一个比较 操作符。<br><strong>注:</strong> 在 SELECT 语句中，表达式发送到客户端后才进行计算。这说明在 HAVING、GROUP BY 或者 ORDER BY 子句中，不能使用包含 SELECT 列表中所设的变量的表达式。</p>
-<h3 id="1-2-系统变量"><a href="#1-2-系统变量" class="headerlink" title="1.2 系统变量"></a>1.2 系统变量</h3><p>MySQL可以访问许多系统和连接变量。当服务器运行时许多变量可以动态更改。这样通常允许你修改服务器操作而不需要停止并重启服务器。</p>
-<p>mysqld服务器维护两种变量。全局变量影响服务器整体操作。会话变量影响具体客户端连接的操作。</p>
-<p>当服务器启动时，它将所有全局变量初始化为默认值。这些默认值可以在选项文件中或在命令行中指定的选项进行更改。服务器启动后，通过连接服务器并执行SET GLOBAL var_name语句，可以动态更改这些全局变量。要想更改全局变量，必须具有SUPER权限。</p>
-<p>服务器还为每个连接的客户端维护一系列会话变量。在连接时使用相应全局变量的当前值对客户端的会话变量进行初始化。对于动态会话变量，客户端可以通过SET SESSION var_name语句更改它们。设置会话变量不需要特殊权限，但客户端只能更改自己的会话变量，而不能更改其它客户端的会话变量。</p>
-<p>对于全局变量的更改可以被访问该全局变量的任何客户端看见。然而，它只影响更改后连接的客户的从该全局变量初始化的相应会话变量。不影响目前已经连接的客户端的会话变量(即使客户端执行SET GLOBAL语句也不影响)。</p>
-<p>可以使用几种语法形式来设置或检索全局或会话变量。下面的例子使用了sort_buffer_sizeas作为示例变量名。<br>要想设置一个GLOBAL变量的值，使用下面的语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SET GLOBAL sort_buffer_size=value;</span><br><span class="line">mysql&gt; SET @@global.sort_buffer_size=value;</span><br></pre></td></tr></table></figure>
-
-<p>要想设置一个SESSION变量的值，使用下面的语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SET SESSION sort_buffer_size=value;</span><br><span class="line">mysql&gt; SET @@session.sort_buffer_size=value;</span><br><span class="line">mysql&gt; SET sort_buffer_size=value;</span><br></pre></td></tr></table></figure>
-
-<p>LOCAL是SESSION的同义词。</p>
-<p>如果设置变量时不指定GLOBAL、SESSION或者LOCAL，默认使用SESSION。<br>要想检索一个GLOBAL变量的值，使用下面的语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT @@global.sort_buffer_size;</span><br><span class="line">mysql&gt; SHOW GLOBAL VARIABLES like &apos;sort_buffer_size&apos;;</span><br></pre></td></tr></table></figure>
-
-<p>要想检索一个SESSION变量的值，使用下面的语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT @@sort_buffer_size;</span><br><span class="line">mysql&gt; SELECT @@session.sort_buffer_size;</span><br><span class="line">mysql&gt; SHOW SESSION VARIABLES like &apos;sort_buffer_size&apos;;</span><br></pre></td></tr></table></figure>
-
-<p>这里，LOCAL也是SESSION的同义词。<br>当你用SELECT @@var_name搜索一个变量时(也就是说，不指定global.、session.或者local.)，MySQL返回SESSION值（如果存在），否则返回GLOBAL值。<br>对于SHOW VARIABLES，如果不指定GLOBAL、SESSION或者LOCAL，MySQL返回SESSION值。<br>当设置GLOBAL变量需要GLOBAL关键字但检索时不需要它们的原因是防止将来出现问题。如果我们移除一个与某个GLOBAL变量具有相同名字的SESSION变量，具有SUPER权限的客户可能会意外地更改GLOBAL变量而不是它自己的连接的SESSION变量。如果我们添加一个与某个GLOBAL变量具有相同名字的SESSION变量，想更改GLOBAL变量的客户可能会发现只有自己的SESSION变量被更改</p>
+<p>上面就是，先将分隔符设置为 |<br>直到遇到下一个 |,才整体执行语句。<br>执行完后，我们使用 delimiter ; 将mysql的分隔符重新设置为分号；<br>如果不修改，本次会话都会以 | 结束运行。</p>
 
       
     </div>
@@ -641,8 +622,8 @@ window.onmouseout = function () {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/16/1/" rel="prev" title="MYSQL基础操作补充">
-                MYSQL基础操作补充 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/16/1/" rel="prev" title="MYSQL中用户变量和系统变量">
+                MYSQL中用户变量和系统变量 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -722,7 +703,7 @@ window.onmouseout = function () {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -744,7 +725,7 @@ window.onmouseout = function () {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -812,7 +793,7 @@ window.onmouseout = function () {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-MYSQL中的用户变量和系统变量"><span class="nav-text">1. MYSQL中的用户变量和系统变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-用户变量"><span class="nav-text">1.1 用户变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-系统变量"><span class="nav-text">1.2 系统变量</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MYSQL中的delimiter详解"><span class="nav-text">MYSQL中的delimiter详解</span></a></li></ol></div>
             
 
           </div>

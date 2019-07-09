@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="mysql,">
+  <meta name="keywords" content="myql,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="1. mysql的安装 系统：Ubuntu Server 16.04.1 LTS 64位  1234#安装 MySQL 服务端sudo apt-get install mysql-server#安装 MySQL 客户端sudo apt-get install mysql-client  安装过程中自己设置root密码 12#查看是否安装成功sudo netstat -tap | grep mysq">
-<meta name="keywords" content="mysql">
+<meta name="description" content="1.项目中常用的MySQL优化方法1. EXPLAIN做MySQL优化，我们要善用EXPLAIN查看SQL执行计划。 type列，连接类型。一个好的SQL语句至少要达到range级别。杜绝出现all级别。   key列，使用到的索引名。如果没有选择索引，值是NULL。可以采取强制索引方式。   key_len列，索引长度。rows列，扫描行数。该值是个预估值。extra列，详细说明。注意，常见的不">
+<meta name="keywords" content="myql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu下mysql的安装问题总结">
-<meta property="og:url" content="http://yoursite.com/2017/11/12/1/index.html">
+<meta property="og:title" content="MYSQL性能优化">
+<meta property="og:url" content="http://yoursite.com/2017/11/20/1/index.html">
 <meta property="og:site_name" content="Meng Xu Dong">
-<meta property="og:description" content="1. mysql的安装 系统：Ubuntu Server 16.04.1 LTS 64位  1234#安装 MySQL 服务端sudo apt-get install mysql-server#安装 MySQL 客户端sudo apt-get install mysql-client  安装过程中自己设置root密码 12#查看是否安装成功sudo netstat -tap | grep mysq">
+<meta property="og:description" content="1.项目中常用的MySQL优化方法1. EXPLAIN做MySQL优化，我们要善用EXPLAIN查看SQL执行计划。 type列，连接类型。一个好的SQL语句至少要达到range级别。杜绝出现all级别。   key列，使用到的索引名。如果没有选择索引，值是NULL。可以采取强制索引方式。   key_len列，索引长度。rows列，扫描行数。该值是个预估值。extra列，详细说明。注意，常见的不">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-04T20:37:19.254Z">
+<meta property="og:updated_time" content="2019-07-09T16:30:18.143Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu下mysql的安装问题总结">
-<meta name="twitter:description" content="1. mysql的安装 系统：Ubuntu Server 16.04.1 LTS 64位  1234#安装 MySQL 服务端sudo apt-get install mysql-server#安装 MySQL 客户端sudo apt-get install mysql-client  安装过程中自己设置root密码 12#查看是否安装成功sudo netstat -tap | grep mysq">
+<meta name="twitter:title" content="MYSQL性能优化">
+<meta name="twitter:description" content="1.项目中常用的MySQL优化方法1. EXPLAIN做MySQL优化，我们要善用EXPLAIN查看SQL执行计划。 type列，连接类型。一个好的SQL语句至少要达到range级别。杜绝出现all级别。   key列，使用到的索引名。如果没有选择索引，值是NULL。可以采取强制索引方式。   key_len列，索引长度。rows列，扫描行数。该值是个预估值。extra列，详细说明。注意，常见的不">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/12/1/">
+  <link rel="canonical" href="http://yoursite.com/2017/11/20/1/">
 
 
 
 
 
-  <title>Ubuntu下mysql的安装问题总结 | Meng Xu Dong</title>
+  <title>MYSQL性能优化 | Meng Xu Dong</title>
   
 
 
@@ -424,7 +424,7 @@ window.onmouseout = function () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/12/1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/20/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ben">
@@ -441,7 +441,7 @@ window.onmouseout = function () {
 
         
         
-          <h2 class="post-title" itemprop="name headline">Ubuntu下mysql的安装问题总结</h2>
+          <h2 class="post-title" itemprop="name headline">MYSQL性能优化</h2>
         
 
         <div class="post-meta">
@@ -453,8 +453,8 @@ window.onmouseout = function () {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-12T04:29:44+08:00">
-                2017-11-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T00:28:19+08:00">
+                2017-11-20
               </time>
             
 
@@ -512,7 +512,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  425 字
+                  2k 字
                 </span>
               
 
@@ -528,7 +528,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  7 分钟
                 </span>
               
             </div>
@@ -549,26 +549,68 @@ window.onmouseout = function () {
       
 
       
-        <h2 id="1-mysql的安装"><a href="#1-mysql的安装" class="headerlink" title="1. mysql的安装"></a>1. mysql的安装</h2><ul>
-<li><strong>系统</strong>：Ubuntu Server 16.04.1 LTS 64位</li>
+        <h2 id="1-项目中常用的MySQL优化方法"><a href="#1-项目中常用的MySQL优化方法" class="headerlink" title="1.项目中常用的MySQL优化方法"></a>1.项目中常用的MySQL优化方法</h2><h3 id="1-EXPLAIN做MySQL优化，我们要善用EXPLAIN查看SQL执行计划。"><a href="#1-EXPLAIN做MySQL优化，我们要善用EXPLAIN查看SQL执行计划。" class="headerlink" title="1. EXPLAIN做MySQL优化，我们要善用EXPLAIN查看SQL执行计划。"></a>1. EXPLAIN做MySQL优化，我们要善用EXPLAIN查看SQL执行计划。</h3><ul>
+<li>type列，连接类型。一个好的SQL语句至少要达到range级别。杜绝出现all级别。  </li>
+<li>key列，使用到的索引名。如果没有选择索引，值是NULL。可以采取强制索引方式。  </li>
+<li>key_len列，索引长度。rows列，扫描行数。该值是个预估值。extra列，详细说明。<br>注意，常见的不太友好的值，如下：Using filesort，Using temporary。  <h3 id="2-SQL语句中IN包含的值不应过多"><a href="#2-SQL语句中IN包含的值不应过多" class="headerlink" title="2. SQL语句中IN包含的值不应过多"></a>2. SQL语句中IN包含的值不应过多</h3>MySQL对于IN做了相应的优化，即将IN中的常量全部存储在一个数组里面，而且这个数组是排好序的。但是如果数值较多，产生的消耗也是比较大的。再例如：select id from t where num in(1,2,3) 对于连续的数值，能用between就不要用in了；再或者使用连接来替换。  <h3 id="3-SELECT语句务必指明字段名称"><a href="#3-SELECT语句务必指明字段名称" class="headerlink" title="3. SELECT语句务必指明字段名称"></a>3. SELECT语句务必指明字段名称</h3>SELECT*增加很多不必要的消耗（CPU、IO、内存、网络带宽）；增加了使用覆盖索引的可能性；当表结构发生改变时，前断也需要更新。所以要求直接在select后面接上字段名。<h3 id="4-当只需要一条数据的时候，使用limit1"><a href="#4-当只需要一条数据的时候，使用limit1" class="headerlink" title="4. 当只需要一条数据的时候，使用limit1"></a>4. 当只需要一条数据的时候，使用limit1</h3>这是为了使EXPLAIN中type列达到const类型<h3 id="5-如果排序字段没有用到索引，就尽量少排序"><a href="#5-如果排序字段没有用到索引，就尽量少排序" class="headerlink" title="5. 如果排序字段没有用到索引，就尽量少排序"></a>5. 如果排序字段没有用到索引，就尽量少排序</h3><h3 id="6-如果限制条件中其他字段没有索引，尽量少用or-or两边的字段中，如果有一个不是索引字段，而其他条件也不是索引字段，会造成该查询不走索引的情况。很多时候使用union-all或者是union（必要的时候）的方式来代替“or”会得到更好的效果。"><a href="#6-如果限制条件中其他字段没有索引，尽量少用or-or两边的字段中，如果有一个不是索引字段，而其他条件也不是索引字段，会造成该查询不走索引的情况。很多时候使用union-all或者是union（必要的时候）的方式来代替“or”会得到更好的效果。" class="headerlink" title="6. 如果限制条件中其他字段没有索引，尽量少用or  or两边的字段中，如果有一个不是索引字段，而其他条件也不是索引字段，会造成该查询不走索引的情况。很多时候使用union all或者是union（必要的时候）的方式来代替“or”会得到更好的效果。"></a>6. 如果限制条件中其他字段没有索引，尽量少用or  or两边的字段中，如果有一个不是索引字段，而其他条件也不是索引字段，会造成该查询不走索引的情况。很多时候使用union all或者是union（必要的时候）的方式来代替“or”会得到更好的效果。</h3><h3 id="7-尽量用union-all代替unionunion和union"><a href="#7-尽量用union-all代替unionunion和union" class="headerlink" title="7. 尽量用union all代替unionunion和union"></a>7. 尽量用union all代替unionunion和union</h3>all的差异主要是前者需要将结果集合并后再进行唯一性过滤操作，这就会涉及到排序，增加大量的CPU运算，加大资源消耗及延迟。当然，union all的前提条件是两个结果集没有重复数据。<h3 id="8-不使用ORDER-BY-RAND"><a href="#8-不使用ORDER-BY-RAND" class="headerlink" title="8. 不使用ORDER BY RAND()"></a>8. 不使用ORDER BY RAND()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select id from `dynamic` order by rand() limit 1000;</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#安装 MySQL 服务端</span><br><span class="line">sudo apt-get install mysql-server</span><br><span class="line">#安装 MySQL 客户端</span><br><span class="line">sudo apt-get install mysql-client</span><br></pre></td></tr></table></figure>
+<p>上面的SQL语句，可优化为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select id from `dynamic` t1 join (select rand() * (select max(id) from `dynamic`) as nid) t2 on t1.id &gt; t2.nidlimit 1000;</span><br></pre></td></tr></table></figure>
 
-<p>安装过程中自己设置root密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#查看是否安装成功</span><br><span class="line">sudo netstat -tap | grep mysql</span><br></pre></td></tr></table></figure>
+<h3 id="9-区分in和exists、not-in和not-exists"><a href="#9-区分in和exists、not-in和not-exists" class="headerlink" title="9. 区分in和exists、not in和not exists"></a>9. 区分in和exists、not in和not exists</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from 表A where id in (select id from 表B)</span><br></pre></td></tr></table></figure>
 
-<p>查看是否安装成功，如果出现如下提示，则安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@VM-0-11-ubuntu:~$ sudo netstat -tap | grep mysql</span><br><span class="line">tcp 0 0 localhost.localdo:mysql *:* LISTEN  25092/mysqld</span><br></pre></td></tr></table></figure>
+<p>上面SQL语句相当于</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from 表A where exists(select * from 表B where 表B.id=表A.id)</span><br></pre></td></tr></table></figure>
 
-<p>使用如下两条命令，打开 MySQL 服务并使用 root 用户登录：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 启动 MySQL 服务</span><br><span class="line">sudo service mysql start</span><br><span class="line"># 使用 root 用户登录，实验楼环境的密码为空，直接回车就可以登录</span><br><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
+<p>区分in和exists主要是造成了驱动顺序的改变（这是性能变化的关键），如果是exists，那么以外层表为驱动表，先被访问，如果是IN，那么先执行子查询。所以IN适合于外表大而内表小的情况；EXISTS适合于外表小而内表大的情况。  </p>
+<p>关于not in和not exists，推荐使用not exists，不仅仅是效率问题，not in可能存在逻辑问题。如何高效的写出一个替代not exists的SQL语句？<br>原SQL语句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select colname … from A表 where a.id not in (select b.id from B表)</span><br></pre></td></tr></table></figure>
 
-<p>在安装过程会提示输入密码，但是输入的密码没有作用，并且出现如下的错误，我把自己怎么改的教程直接贴出来，照着我的改然后重新登录就可以了。</p>
-<p><strong>错误</strong>:&emsp;<code>ERROR 1045 (28000): Access denied for user &#39;root&#39;@&#39;localhost&#39;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#使用sudo cat /etc/mysql/debian.cnf查看用户名密码</span><br><span class="line">ubuntu@VM-0-11-ubuntu:~$ sudo cat /etc/mysql/debian.cnf </span><br><span class="line">[client]</span><br><span class="line">host     = localhost</span><br><span class="line">user     = debin-sys-mat</span><br><span class="line">password = he5gNV6mzFoxQc</span><br><span class="line">socket   = /var/run/mysqld/mysqld.sock</span><br><span class="line">[mysql_upgrade]</span><br><span class="line">host     = localhost</span><br><span class="line">user     = debin-sys-mat</span><br><span class="line">password = he5gNV6mzFoxQc</span><br><span class="line">socket   = /var/run/mysqld/mysqld.sock用户以及密码</span><br><span class="line">#出现的user=debin-sys-mat是用户名，password = he5gNV6mzFoxQc为密码</span><br><span class="line"></span><br><span class="line">#用查询到的用户名以及密码登陆</span><br><span class="line">mysql -udebin-sys-mat -phe5gNV6mzFoxQc</span><br><span class="line">#注意用户名和密码之前分别有 -u和-p</span><br><span class="line"></span><br><span class="line">#用下边命令改root密码</span><br><span class="line">update user set authentication_string=password(&apos;要改的密码&apos;) where user=&quot;root&quot;;</span><br><span class="line"></span><br><span class="line">#mysql 新设置用户或更改密码后需用flush privileges刷新MySQL的系统权限相关表，否则会出现拒绝访问。</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+<p>高效的SQL语句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select colname … from A表 Left join B表 on where a.id = b.id where b.id is null</span><br></pre></td></tr></table></figure>
 
-<p>这样就安装好并且可以使用mysql。</p>
+<p>取出的数据集是A表不在B表中的数据。A - ( A ∩ B)。</p>
+<h3 id="10-使用合理的分页方式以提高分页的效率"><a href="#10-使用合理的分页方式以提高分页的效率" class="headerlink" title="10. 使用合理的分页方式以提高分页的效率"></a>10. 使用合理的分页方式以提高分页的效率</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select id,name from product limit 866613,20;</span><br></pre></td></tr></table></figure>
 
+<p>使用上述SQL语句做分页的时候，可能有人会发现，随着表数据量的增加，直接使用limit分页查询会越来越慢。<br>优化的方法如下：可以取前一页的最大行数的id，然后根据这个最大的id来限制下一页的起点。比如此列中，上一页最大的id是866612。SQL可以采用如下的写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select id,name from product where id&gt; 866612 limit 20</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-分段查询"><a href="#11-分段查询" class="headerlink" title="11. 分段查询"></a>11. 分段查询</h3><p>在一些用户选择页面中，可能一些用户选择的时间范围过大，造成查询缓慢。主要的原因是扫描行数过多。这个时候可以通过程序，分段进行查询，循环遍历，将结果合并处理进行展示。<br>扫描的行数成百万级以上的时候就可以使用分段查询：</p>
+<h3 id="12-避免在where子句中对字段进行null值判断"><a href="#12-避免在where子句中对字段进行null值判断" class="headerlink" title="12. 避免在where子句中对字段进行null值判断"></a>12. 避免在where子句中对字段进行null值判断</h3><p>对于null的判断会导致引擎放弃使用索引而进行全表扫描。</p>
+<h3 id="13-不建议使用-前缀模糊查询"><a href="#13-不建议使用-前缀模糊查询" class="headerlink" title="13. 不建议使用%前缀模糊查询"></a>13. 不建议使用%前缀模糊查询</h3><p>例如 LIKE“%name” 或者 LIKE“%name%” ，这种查询会导致索引失效而进行全表扫描。但是可以使用LIKE “name%”。那如何查询%name%？答案：使用全文索引。<br>在我们查询中经常会用到select id,fnum,fdst from dynamic_201606 where user_name like ‘%zhangsan%’; 。这样的语句，普通索引是无法满足查询需求的。庆幸的是在MySQL中，有全文索引来帮助我们。<br>创建全文索引的SQL语法是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE `dynamic_201606` ADD FULLTEXT INDEX `idx_user_name` (`user_name`);</span><br></pre></td></tr></table></figure>
+
+<p>使用全文索引的SQL语句是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select id,fnum,fdst from dynamic_201606 where match(user_name) against(&apos;zhangsan&apos; in boolean mode);</span><br></pre></td></tr></table></figure>
+
+<p>注意：在需要创建全文索引之前，请联系DBA确定能否创建。同时需要注意的是查询语句的写法与普通索引的区别。</p>
+<h3 id="14-避免在where子句中对字段进行表达式操作"><a href="#14-避免在where子句中对字段进行表达式操作" class="headerlink" title="14. 避免在where子句中对字段进行表达式操作"></a>14. 避免在where子句中对字段进行表达式操作</h3><p>比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select user_id,user_project from user_base where age*2=36;</span><br></pre></td></tr></table></figure>
+
+<p>中对字段就行了算术运算，这会造成引擎放弃使用索引，建议改成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select user_id,user_project from user_base where age=36/2;</span><br></pre></td></tr></table></figure>
+
+<h3 id="15-避免隐式类型转换"><a href="#15-避免隐式类型转换" class="headerlink" title="15. 避免隐式类型转换"></a>15. 避免隐式类型转换</h3><p>where子句中出现column字段的类型和传入的参数类型不一致的时候发生的类型转换，建议先确定where中的参数类型。</p>
+<h3 id="16-对于联合索引来说，要遵守最左前缀法则"><a href="#16-对于联合索引来说，要遵守最左前缀法则" class="headerlink" title="16. 对于联合索引来说，要遵守最左前缀法则"></a>16. 对于联合索引来说，要遵守最左前缀法则</h3><p>举列来说索引含有字段id、name、school，可以直接用id字段，也可以id、name这样的顺序，但是name;school都无法使用这个索引。所以在创建联合索引的时候一定要注意索引字段顺序，常用的查询字段放在最前面。</p>
+<h3 id="17-必要时可以使用force-index来强制查询走某个索引"><a href="#17-必要时可以使用force-index来强制查询走某个索引" class="headerlink" title="17. 必要时可以使用force index来强制查询走某个索引"></a>17. 必要时可以使用force index来强制查询走某个索引</h3><p>有的时候MySQL优化器采取它认为合适的索引来检索SQL语句，但是可能它所采用的索引并不是我们想要的。这时就可以采用forceindex来强制优化器使用我们制定的索引。  </p>
+<h3 id="18-注意范围查询语句"><a href="#18-注意范围查询语句" class="headerlink" title="18. 注意范围查询语句"></a>18. 注意范围查询语句</h3><p>对于联合索引来说，如果存在范围查询，比如between、&gt;、&lt;等条件时，会造成后面的索引字段失效。</p>
+<h3 id="19-关于JOIN优化"><a href="#19-关于JOIN优化" class="headerlink" title="19. 关于JOIN优化"></a>19. 关于JOIN优化</h3><p>LEFT JOIN A表为驱动表，INNER JOIN MySQL会自动找出那个数据少的表作用驱动表，RIGHT JOIN B表为驱动表。<br>注意：  </p>
+<ul>
+<li><p>MySQL中没有full join，可以用以下方式来解决：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from A left join B on B.name = A.namewhere B.name is nullunion allselect * from B;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>尽量使用inner join，避免left join：<br>参与联合查询的表至少为2张表，一般都存在大小之分。如果连接方式是inner join，在没有其他过滤条件的情况下MySQL会自动选择小表作为驱动表，但是left join在驱动表的选择上遵循的是左边驱动右边的原则，即left join左边的表名为驱动表。  </p>
+</li>
+<li><p>合理利用索引：<br>被驱动表的索引字段作为on的限制字段。</p>
+</li>
+<li><p>利用小表去驱动大表：<br>如果能够减少驱动表的话，减少嵌套循环中的循环次数，以减少 IO总量及CPU运算的次数。  </p>
+</li>
+<li><p>巧用STRAIGHT_JOIN：<br>inner join是由MySQL选择驱动表，但是有些特殊情况需要选择另个表作为驱动表，比如有group by、order by等「Using filesort」、「Using temporary」时。STRAIGHT_JOIN来强制连接顺序，在STRAIGHT_JOIN左边的表名就是驱动表，右边则是被驱动表。在使用STRAIGHT_JOIN有个前提条件是该查询是内连接，也就是inner join。其他链接不推荐使用STRAIGHT_JOIN，否则可能造成查询结果不准确。</p>
+</li>
+</ul>
+<h4 id="转载总结自网络。"><a href="#转载总结自网络。" class="headerlink" title="转载总结自网络。"></a>转载总结自网络。</h4>
       
     </div>
     
@@ -614,7 +656,7 @@ window.onmouseout = function () {
       
         <div class="post-tags">
           
-            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i>mysql</a>
+            <a href="/tags/myql/" rel="tag"><i class="fa fa-tag"></i>myql</a>
           
         </div>
       
@@ -627,14 +669,18 @@ window.onmouseout = function () {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/11/18/1/" rel="next" title="MYSQL中的控制流程函数">
+                <i class="fa fa-chevron-left"></i> MYSQL中的控制流程函数
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/13/1/" rel="prev" title="MYSQL基础操作总结（一）">
-                MYSQL基础操作总结（一） <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/11/1/" rel="prev" title="Python微信防撤回">
+                Python微信防撤回 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -804,7 +850,7 @@ window.onmouseout = function () {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mysql的安装"><span class="nav-text">1. mysql的安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-项目中常用的MySQL优化方法"><span class="nav-text">1.项目中常用的MySQL优化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-EXPLAIN做MySQL优化，我们要善用EXPLAIN查看SQL执行计划。"><span class="nav-text">1. EXPLAIN做MySQL优化，我们要善用EXPLAIN查看SQL执行计划。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-SQL语句中IN包含的值不应过多"><span class="nav-text">2. SQL语句中IN包含的值不应过多</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-SELECT语句务必指明字段名称"><span class="nav-text">3. SELECT语句务必指明字段名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-当只需要一条数据的时候，使用limit1"><span class="nav-text">4. 当只需要一条数据的时候，使用limit1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-如果排序字段没有用到索引，就尽量少排序"><span class="nav-text">5. 如果排序字段没有用到索引，就尽量少排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-如果限制条件中其他字段没有索引，尽量少用or-or两边的字段中，如果有一个不是索引字段，而其他条件也不是索引字段，会造成该查询不走索引的情况。很多时候使用union-all或者是union（必要的时候）的方式来代替“or”会得到更好的效果。"><span class="nav-text">6. 如果限制条件中其他字段没有索引，尽量少用or  or两边的字段中，如果有一个不是索引字段，而其他条件也不是索引字段，会造成该查询不走索引的情况。很多时候使用union all或者是union（必要的时候）的方式来代替“or”会得到更好的效果。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-尽量用union-all代替unionunion和union"><span class="nav-text">7. 尽量用union all代替unionunion和union</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-不使用ORDER-BY-RAND"><span class="nav-text">8. 不使用ORDER BY RAND()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-区分in和exists、not-in和not-exists"><span class="nav-text">9. 区分in和exists、not in和not exists</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-使用合理的分页方式以提高分页的效率"><span class="nav-text">10. 使用合理的分页方式以提高分页的效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-分段查询"><span class="nav-text">11. 分段查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-避免在where子句中对字段进行null值判断"><span class="nav-text">12. 避免在where子句中对字段进行null值判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-不建议使用-前缀模糊查询"><span class="nav-text">13. 不建议使用%前缀模糊查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-避免在where子句中对字段进行表达式操作"><span class="nav-text">14. 避免在where子句中对字段进行表达式操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-避免隐式类型转换"><span class="nav-text">15. 避免隐式类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-对于联合索引来说，要遵守最左前缀法则"><span class="nav-text">16. 对于联合索引来说，要遵守最左前缀法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-必要时可以使用force-index来强制查询走某个索引"><span class="nav-text">17. 必要时可以使用force index来强制查询走某个索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-注意范围查询语句"><span class="nav-text">18. 注意范围查询语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-关于JOIN优化"><span class="nav-text">19. 关于JOIN优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#转载总结自网络。"><span class="nav-text">转载总结自网络。</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
