@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python可视化神器-plotly]]></title>
+    <url>%2F2019%2F07%2F18%2F1%2F</url>
+    <content type="text"><![CDATA[本文是在 medium 中浏览发现的，这篇文章可以让我们认识到 plotly 的存在使数据可视化分析操作更加简易，交互性更强，效率更高。原文链接The Next Level of Data Visualization in Python注:原文需翻墙，所以进行了转载翻译plotly是一款基于D3.js框架的Python库，Plotly中绘制图像有在线和离线两种方式，因为在线绘图需要注册账号获取API key，较为麻烦，所以本文仅介绍离线绘图的方式。离线绘图又有plotly.offline.plot()和plotly.offline.iplot()两种方法，前者是以离线的方式在当前工作目录下生成html格式的图像文件，并自动打开；后者是在jupyter notebook中专用的方法，即将生成的图形嵌入到ipynb文件中。本文中的所有工作都是使用 plotly + cufflinks 在Jupyter笔记本中离线运行完成。数据来源: medium数据用 pip 安装 plotly 和 cufflinks，在 jupyter 导入 cufflinks plotly 运行： 12345678# 导入 plotlyimport plotly.plotly as pyimport plotly.graph_objs as gofrom plotly.offline import iplot, init_notebook_mode# 在离线模式下使用 cufflinks plotlyimport cufflinkscufflinks.go_offline(connected=True)init_notebook_mode(connected=True) 单变量分布：柱状图和箱线图]]></content>
+      <categories>
+        <category>数据分析</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[推荐系统中的数据挖掘方法]]></title>
     <url>%2F2018%2F07%2F14%2F1%2F</url>
     <content type="text"><![CDATA[1. 推荐系统中的数据挖掘方法概览&emsp;&emsp;数据挖掘过程一般是由三个连续的执行步骤组成，本章不会过多的介绍这些方法，只是做一个总结，详细的过程以及公式推导建议大家去阅读《统计学方法》以及《推荐系统 技术、评估及高效算法》。。]]></content>
