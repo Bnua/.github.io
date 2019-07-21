@@ -180,4 +180,12 @@
         <tag>mysql</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[pip修改默认镜像源]]></title>
+    <url>%2F2017%2F11%2F02%2F1%2F</url>
+    <content type="text"><![CDATA[windows10 下 python 用 pip 安装报错 解决方法：修改默认镜像源 在windows文件管理器中,输入 %APPDATA% 在该目录下新建 pip 文件 在新建的 pip 文件下创建 pip.ini 并输入以下内容:[global] timeout = 6000 index-url = http://mirrors.aliyun.com/pypi/simple]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
 </search>
