@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="python,plotly,">
+  <meta name="keywords" content="python，plotly,">
 
 
 
@@ -81,20 +81,21 @@
 
 
 
-<meta name="description" content="plotly绘制面积图基本面积图：使用 Plotly 绘制面积图与绘制散点图和折线图相同，都使用 plotlygraph_objs 中的 Scatter 函数，不同之处在于面积图对于 fill 属性的设置，相当于在折线图的基础上对图形进行填充。。 1234567891011121314151617181920212223242526272829303132333435363738394041424">
-<meta name="keywords" content="python,plotly">
+<meta name="description" content="plotly绘制甘特图甘特图（Gantt Chart）又称为横道图，通过条形来显示项目的进度、时间的安排等与时间相关的情况。绘制甘特图的函数是 Plotly.figure_factory 中的 create_gantt，通过传递包含事件（Task）与开始、结束（Start、Finish）时间的数据来绘制图表。甘特图的绘制也可以在markdown中完成。 甘特图(按数字索引)：将传入甘特图的数据按数">
+<meta name="keywords" content="python，plotly">
 <meta property="og:type" content="article">
-<meta property="og:title" content="plotly基础图形-面积图">
+<meta property="og:title" content="plotly基础图形-甘特图">
 <meta property="og:url" content="http://yoursite.com/2019/02/25/1/index.html">
 <meta property="og:site_name" content="Meng Xu Dong">
-<meta property="og:description" content="plotly绘制面积图基本面积图：使用 Plotly 绘制面积图与绘制散点图和折线图相同，都使用 plotlygraph_objs 中的 Scatter 函数，不同之处在于面积图对于 fill 属性的设置，相当于在折线图的基础上对图形进行填充。。 1234567891011121314151617181920212223242526272829303132333435363738394041424">
+<meta property="og:description" content="plotly绘制甘特图甘特图（Gantt Chart）又称为横道图，通过条形来显示项目的进度、时间的安排等与时间相关的情况。绘制甘特图的函数是 Plotly.figure_factory 中的 create_gantt，通过传递包含事件（Task）与开始、结束（Start、Finish）时间的数据来绘制图表。甘特图的绘制也可以在markdown中完成。 甘特图(按数字索引)：将传入甘特图的数据按数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/1/%5Cimages%5Cbasic_area.png">
-<meta property="og:updated_time" content="2019-07-24T19:21:20.728Z">
+<meta property="og:image" content="http://yoursite.com/images/gantt_numeric.png">
+<meta property="og:image" content="http://yoursite.com/images/gantt_group.png">
+<meta property="og:updated_time" content="2019-07-24T19:47:57.011Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="plotly基础图形-面积图">
-<meta name="twitter:description" content="plotly绘制面积图基本面积图：使用 Plotly 绘制面积图与绘制散点图和折线图相同，都使用 plotlygraph_objs 中的 Scatter 函数，不同之处在于面积图对于 fill 属性的设置，相当于在折线图的基础上对图形进行填充。。 1234567891011121314151617181920212223242526272829303132333435363738394041424">
-<meta name="twitter:image" content="http://yoursite.com/2019/02/25/1/%5Cimages%5Cbasic_area.png">
+<meta name="twitter:title" content="plotly基础图形-甘特图">
+<meta name="twitter:description" content="plotly绘制甘特图甘特图（Gantt Chart）又称为横道图，通过条形来显示项目的进度、时间的安排等与时间相关的情况。绘制甘特图的函数是 Plotly.figure_factory 中的 create_gantt，通过传递包含事件（Task）与开始、结束（Start、Finish）时间的数据来绘制图表。甘特图的绘制也可以在markdown中完成。 甘特图(按数字索引)：将传入甘特图的数据按数">
+<meta name="twitter:image" content="http://yoursite.com/images/gantt_numeric.png">
 
 
 
@@ -130,7 +131,7 @@
 
 
 
-  <title>plotly基础图形-面积图 | Meng Xu Dong</title>
+  <title>plotly基础图形-甘特图 | Meng Xu Dong</title>
   
 
 
@@ -443,7 +444,7 @@ window.onmouseout = function () {
 
         
         
-          <h2 class="post-title" itemprop="name headline">plotly基础图形-面积图</h2>
+          <h2 class="post-title" itemprop="name headline">plotly基础图形-甘特图</h2>
         
 
         <div class="post-meta">
@@ -455,7 +456,7 @@ window.onmouseout = function () {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-25T18:42:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-25T18:41:52+08:00">
                 2019-02-25
               </time>
             
@@ -509,7 +510,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  361 字
+                  820 字
                 </span>
               
 
@@ -525,7 +526,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -546,11 +547,15 @@ window.onmouseout = function () {
       
 
       
-        <h3 id="plotly绘制面积图"><a href="#plotly绘制面积图" class="headerlink" title="plotly绘制面积图"></a>plotly绘制面积图</h3><h4 id="基本面积图："><a href="#基本面积图：" class="headerlink" title="基本面积图："></a>基本面积图：</h4><p>使用 Plotly 绘制面积图与绘制散点图和折线图相同，都使用 plotlygraph_objs 中的 Scatter 函数，不同之处在于面积图对于 fill 属性的设置，相当于在折线图的基础上对图形进行填充。。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">import plotly as py</span><br><span class="line">import plotly.graph_objs as go</span><br><span class="line">import numpy as np</span><br><span class="line"># Basic Overlaid Area Chart</span><br><span class="line">pyplt = py.offline.plot</span><br><span class="line"></span><br><span class="line"># 随机生成100个交易日的收益率</span><br><span class="line">s1 = np.random.RandomState(8) # 定义局部种子</span><br><span class="line">s2 = np.random.RandomState(9) # 定义局部种子</span><br><span class="line">rd1 = s1.rand(100)/10 - 0.02</span><br><span class="line">rd2 = s2.rand(100)/10 - 0.02</span><br><span class="line"></span><br><span class="line"># 设定初始资金</span><br><span class="line">initial1 = 100000</span><br><span class="line">initial2 = 100000</span><br><span class="line">total1 = []</span><br><span class="line">total2 = []</span><br><span class="line">for i in range(len(rd1)):</span><br><span class="line">    initial1 = initial1*rd1[i] + initial1</span><br><span class="line">    initial2 = initial2*rd2[i] + initial2</span><br><span class="line">    total1.append(initial1)</span><br><span class="line">    total2.append(initial2)</span><br><span class="line"></span><br><span class="line">trace1 = go.Scatter(</span><br><span class="line">#     x = [1, 2, 3, 4],a</span><br><span class="line">    y = total1,</span><br><span class="line">    fill = &apos;tonexty&apos;,</span><br><span class="line">    mode= &apos;none&apos;, # 无边界线</span><br><span class="line">    name = &quot;策略1&quot;</span><br><span class="line">)</span><br><span class="line">trace2 = go.Scatter(</span><br><span class="line">#     x = [1, 2, 3, 4],</span><br><span class="line">    y = total2,</span><br><span class="line">    fill = &apos;tozeroy&apos;,</span><br><span class="line">    mode= &apos;none&apos;,# 无边界线</span><br><span class="line">    name = &quot;策略2&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">data = [trace1, trace2]</span><br><span class="line"></span><br><span class="line">layout = dict(title = &apos;策略净值曲线&apos;,</span><br><span class="line">              xaxis = dict(title = &apos;交易天数&apos;),</span><br><span class="line">              yaxis = dict(title = &apos;净值&apos;),</span><br><span class="line">              )</span><br><span class="line">fig = dict(data = data, layout = layout)</span><br><span class="line">pyplt(fig, filename=&apos;basic-area1.html&apos;)</span><br></pre></td></tr></table></figure>
+        <h3 id="plotly绘制甘特图"><a href="#plotly绘制甘特图" class="headerlink" title="plotly绘制甘特图"></a>plotly绘制甘特图</h3><p>甘特图（Gantt Chart）又称为横道图，通过条形来显示项目的进度、时间的安排等与时间相关的情况。绘制甘特图的函数是 Plotly.figure_factory 中的 create_gantt，通过传递包含事件（Task）与开始、结束（Start、Finish）时间的数据来绘制图表。<br>甘特图的绘制也可以在markdown中完成。</p>
+<h4 id="甘特图-按数字索引-："><a href="#甘特图-按数字索引-：" class="headerlink" title="甘特图(按数字索引)："></a>甘特图(按数字索引)：</h4><p>将传入甘特图的数据按数字索引可以方便地对任务进行分类，本节中包含了6项工作，每项工作后的complete属性即为其对应的索引值，在create_gantt函数中设置 index_col=’Complete’，则有相同索引值的条形会呈现出相同的颜色，右侧的颜色条可以帮助用户根据颜色来判断任务大概对应的索引值是多少，这个数字的范围是0～100，用来反映工作完成的进度，100表示全部完成，0表示没有进展。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import plotly as py</span><br><span class="line">import plotly.figure_factory as ff</span><br><span class="line"></span><br><span class="line">pyplt = py.offline.plot</span><br><span class="line">df = [dict(Task=&quot;Job A&quot;, Start=&apos;2009-01-01&apos;, Finish=&apos;2009-02-28&apos;, Complete=10，Resource=&apos;Sleep&apos;),</span><br><span class="line">      dict(Task=&quot;Job B&quot;, Start=&apos;2008-12-05&apos;, Finish=&apos;2009-04-15&apos;, Complete=10),</span><br><span class="line">      dict(Task=&quot;Job C&quot;, Start=&apos;2009-02-20&apos;, Finish=&apos;2009-05-30&apos;, Complete=50),</span><br><span class="line">      dict(Task=&quot;Job D&quot;, Start=&apos;2009-03-20&apos;, Finish=&apos;2009-06-30&apos;, Complete=50),</span><br><span class="line">      dict(Task=&quot;Job E&quot;, Start=&apos;2009-01-12&apos;, Finish=&apos;2009-04-28&apos;, Complete=100),</span><br><span class="line">      dict(Task=&quot;Job F&quot;, Start=&apos;2009-03-07&apos;, Finish=&apos;2009-08-21&apos;, Complete=100)]</span><br><span class="line"></span><br><span class="line">fig = ff.create_gantt(df,  index_col=&apos;Complete&apos;, show_colorbar=True)</span><br><span class="line">pyplt(fig, filename=&apos;gantt-numeric-variable.html&apos;)</span><br></pre></td></tr></table></figure>
 
-<p><img src="%5Cimages%5Cbasic_area.png" alt></p>
-<h4 id="内部填充面积图"><a href="#内部填充面积图" class="headerlink" title="内部填充面积图"></a>内部填充面积图</h4><p>内部填充面积图仅填充两条曲线交叉所形成的面积部分，同样通过设置 fill 属性来完成，只需在原面积图的基础上设置第一条曲线无填充效果，即 fill = None，再设置第二条曲线的填充的效果为 tonexty，即 fill = ‘tonexty’。</p>
+<p><img src="/images/gantt_numeric.png" alt></p>
+<h3 id="甘特图（按类别索引）"><a href="#甘特图（按类别索引）" class="headerlink" title="甘特图（按类别索引）"></a>甘特图（按类别索引）</h3><p>对甘特图的另一种索引方式是按照类别索引，本案例中包含8项工作，每项工作（数据）中的Resource代表此项工作所属的状态，状态分为Complete、Incomplete和Not Started三种，通过设置create_gantt函数中的index_col=’Resurce’ 即可完成通过Resource类别索引的目的。color属性用于设置不同状态对应的颜色，注意需要以字典的格式传递给create_gantt。<br>使用 bar_width 设置任务条的宽度，使用 showgrid_x  与 showgrid_y 设置是否显示横、纵坐标轴，以及使用 title设置标题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import plotly as py</span><br><span class="line">import plotly.figure_factory as ff</span><br><span class="line">pyplt = py.offline.plot</span><br><span class="line"></span><br><span class="line">df = [dict(Task=&quot;Job-1&quot;, Start=&apos;2017-01-01&apos;, Finish=&apos;2017-02-02&apos;, Resource=&apos;Complete&apos;),</span><br><span class="line">      dict(Task=&quot;Job-2&quot;, Start=&apos;2017-02-15&apos;, Finish=&apos;2017-03-15&apos;, Resource=&apos;Incomplete&apos;),</span><br><span class="line">      dict(Task=&quot;Job-3&quot;, Start=&apos;2017-01-17&apos;, Finish=&apos;2017-02-17&apos;, Resource=&apos;Not Started&apos;),</span><br><span class="line">      dict(Task=&quot;Job-4&quot;, Start=&apos;2017-01-17&apos;, Finish=&apos;2017-02-17&apos;, Resource=&apos;Complete&apos;),</span><br><span class="line">      dict(Task=&quot;Job-5&quot;, Start=&apos;2017-03-10&apos;, Finish=&apos;2017-03-20&apos;, Resource=&apos;Not Started&apos;),</span><br><span class="line">      dict(Task=&quot;Job-6&quot;, Start=&apos;2017-04-01&apos;, Finish=&apos;2017-04-20&apos;, Resource=&apos;Not Started&apos;),</span><br><span class="line">      dict(Task=&quot;Job-7&quot;, Start=&apos;2017-05-18&apos;, Finish=&apos;2017-06-18&apos;, Resource=&apos;Not Started&apos;),</span><br><span class="line">      dict(Task=&quot;Job-8&quot;, Start=&apos;2017-01-14&apos;, Finish=&apos;2017-03-14&apos;, Resource=&apos;Complete&apos;)]</span><br><span class="line"></span><br><span class="line">colors = &#123;&apos;Not Started&apos;: &apos;rgb(220, 0, 0)&apos;,</span><br><span class="line">          &apos;Incomplete&apos;: (1, 0.9, 0.16),</span><br><span class="line">          &apos;Complete&apos;: &apos;rgb(0, 255, 100)&apos;&#125;</span><br><span class="line"></span><br><span class="line">fig = ff.create_gantt(df, colors=colors, index_col=&apos;Resource&apos;, show_colorbar=True, title = &apos;Daily Schedule&apos;, bar_width = 0.8, showgrid_x = True, showgrid_y = True)</span><br><span class="line">pyplt(fig, filename=&apos;gantt-group-tasks-together.html&apos;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/gantt_group.png" alt></p>
 
       
     </div>
@@ -597,9 +602,7 @@ window.onmouseout = function () {
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i>python</a>
-          
-            <a href="/tags/plotly/" rel="tag"><i class="fa fa-tag"></i>plotly</a>
+            <a href="/tags/python，plotly/" rel="tag"><i class="fa fa-tag"></i>python，plotly</a>
           
         </div>
       
@@ -612,8 +615,8 @@ window.onmouseout = function () {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/22/1/" rel="next" title="plotly基础图形-线形图">
-                <i class="fa fa-chevron-left"></i> plotly基础图形-线形图
+              <a href="/2019/02/24/1/" rel="next" title="plotly基础图形-柱状图">
+                <i class="fa fa-chevron-left"></i> plotly基础图形-柱状图
               </a>
             
           </div>
@@ -622,8 +625,8 @@ window.onmouseout = function () {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/25/1/" rel="prev" title="plotly基础图形-直方图">
-                plotly基础图形-直方图 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/25/1/" rel="prev" title="plotly基础图形-面积图">
+                plotly基础图形-面积图 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -793,7 +796,7 @@ window.onmouseout = function () {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#plotly绘制面积图"><span class="nav-text">plotly绘制面积图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本面积图："><span class="nav-text">基本面积图：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内部填充面积图"><span class="nav-text">内部填充面积图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#plotly绘制甘特图"><span class="nav-text">plotly绘制甘特图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#甘特图-按数字索引-："><span class="nav-text">甘特图(按数字索引)：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#甘特图（按类别索引）"><span class="nav-text">甘特图（按类别索引）</span></a></li></ol></div>
             
 
           </div>

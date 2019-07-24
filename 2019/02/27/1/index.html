@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Meng Xu Dong">
 <meta property="og:description" content="使用cufflinks绘图为了方便绘图，Plotly 为 Pandas 做了特殊的封装，这个封装模块就是 cufflinks。cufflinks 的作用是改变 Pandas 绘图的默认呈现方式。Pandas 绘图默认的呈现方式是 Matplotlib，cufflinks 把这种呈现方式改为 Plotly。 基础操作：使用cufflinks绘制线形图非常简单，与使用Pandas绘图并没有什么不同。c">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-24T19:22:55.767Z">
+<meta property="og:updated_time" content="2019-07-24T19:48:44.173Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="plotly与pandas">
 <meta name="twitter:description" content="使用cufflinks绘图为了方便绘图，Plotly 为 Pandas 做了特殊的封装，这个封装模块就是 cufflinks。cufflinks 的作用是改变 Pandas 绘图的默认呈现方式。Pandas 绘图默认的呈现方式是 Matplotlib，cufflinks 把这种呈现方式改为 Plotly。 基础操作：使用cufflinks绘制线形图非常简单，与使用Pandas绘图并没有什么不同。c">
@@ -549,7 +549,7 @@ window.onmouseout = function () {
 <ol>
 <li>导入cufflinks<br><code>import cufflinks as cf</code></li>
 <li>设置Pandas的输出模式<br><code>cf.set_config_file(offline=True, theme=&#39;ggplot&#39;)</code><br>cufflinks 已经为我们封装好了多种非常流行的主题，包括polar、pearl、henanigans、solar、ggplot、space和white等，可以通过cf.getThemes()方法获取当前版本所支持的所有主题。</li>
-<li>绘制图形<br><code>df.iplot(kind=&#39;scatter&#39;, filename=&#39;tmp/cf_line.html&#39;)</code><br>cufflinks只支持 iplot 的绘图函数，不支持 plot 的绘图函数。<h4 id="进阶操作"><a href="#进阶操作" class="headerlink" title="进阶操作"></a>进阶操作</h4>通过 cufflinks 快速生成所需要的数据，在学习 Pandas 数据处理与绘图的过程中非常高效。这也是 plotly 的强大所在。<br>cf.datagen 是 cufflinks 封装好的生成 Pandas 数据的模块，里面包含了常见的绘图（如bar、pie、scatter、ohlc）数据所需要的函数，我们可以通过dir(cf.datagen)命令查看可用的数据。<br>在转载翻译的 <a href="http://www.xudongmeng.com/2019/02/18/1/" target="_blank" rel="noopener">python可视化神器-plotly</a> 中 就是Plotly + cufflinks 的简单操作体现。 </li>
+<li>绘制图形<br><code>df.iplot(kind=&#39;scatter&#39;, filename=&#39;tmp/cf_line.html&#39;)</code><br>cufflinks只支持 iplot 的绘图函数，不支持 plot 的绘图函数。  <h4 id="进阶操作"><a href="#进阶操作" class="headerlink" title="进阶操作"></a>进阶操作</h4>通过 cufflinks 快速生成所需要的数据，在学习 Pandas 数据处理与绘图的过程中非常高效。这也是 plotly 的强大所在。<br>cf.datagen 是 cufflinks 封装好的生成 Pandas 数据的模块，里面包含了常见的绘图（如bar、pie、scatter、ohlc）数据所需要的函数，我们可以通过dir(cf.datagen)命令查看可用的数据。<br>在转载翻译的 <a href="http://www.xudongmeng.com/2019/02/18/1/" target="_blank" rel="noopener">python可视化神器-plotly</a> 中 就是Plotly + cufflinks 的简单操作体现。 </li>
 </ol>
 
       
@@ -622,8 +622,8 @@ window.onmouseout = function () {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/24/1/" rel="prev" title="plotly基础图形-柱状图">
-                plotly基础图形-柱状图 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/28/1/" rel="prev" title="plotly高级图形-时间序列">
+                plotly高级图形-时间序列 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
