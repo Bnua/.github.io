@@ -81,18 +81,21 @@
 
 
 
-<meta name="description" content="plotly绘制饼图使用Plotly绘制饼图需要使用 graph_objs 中的 Pie 函数。Pie 函数中最常用的两个属性一个是 values，用于赋给其需要可视化的数据；另一个是 labels，表示不同数据对应的标签。 饼图：12345678910111213141516171819202122import plotly as pyimport plotly.graph_objs as go">
+<meta name="description" content="plotly时间序列Plotly 对时间序列的支持比较友好，既支持字符串格式，又支持日期/时间格式，而且使用起来相当简单。 时间序列：123456789101112131415161718import plotly as pyimport plotly.graph_objs as gofrom datetime import datetime# ----------pre defpyplt = p">
 <meta name="keywords" content="python,plotly">
 <meta property="og:type" content="article">
-<meta property="og:title" content="plotly基础图形-饼图">
+<meta property="og:title" content="plotly高级图形-时间序列">
 <meta property="og:url" content="http://yoursite.com/2019/02/26/1/index.html">
 <meta property="og:site_name" content="Meng Xu Dong">
-<meta property="og:description" content="plotly绘制饼图使用Plotly绘制饼图需要使用 graph_objs 中的 Pie 函数。Pie 函数中最常用的两个属性一个是 values，用于赋给其需要可视化的数据；另一个是 labels，表示不同数据对应的标签。 饼图：12345678910111213141516171819202122import plotly as pyimport plotly.graph_objs as go">
+<meta property="og:description" content="plotly时间序列Plotly 对时间序列的支持比较友好，既支持字符串格式，又支持日期/时间格式，而且使用起来相当简单。 时间序列：123456789101112131415161718import plotly as pyimport plotly.graph_objs as gofrom datetime import datetime# ----------pre defpyplt = p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-24T18:25:25.328Z">
+<meta property="og:image" content="http://yoursite.com/2019/02/26/1/%5Cimages%5CtimeRange.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/26/1/%5Cimages%5CRangeSlide.png">
+<meta property="og:updated_time" content="2019-07-24T19:07:52.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="plotly基础图形-饼图">
-<meta name="twitter:description" content="plotly绘制饼图使用Plotly绘制饼图需要使用 graph_objs 中的 Pie 函数。Pie 函数中最常用的两个属性一个是 values，用于赋给其需要可视化的数据；另一个是 labels，表示不同数据对应的标签。 饼图：12345678910111213141516171819202122import plotly as pyimport plotly.graph_objs as go">
+<meta name="twitter:title" content="plotly高级图形-时间序列">
+<meta name="twitter:description" content="plotly时间序列Plotly 对时间序列的支持比较友好，既支持字符串格式，又支持日期/时间格式，而且使用起来相当简单。 时间序列：123456789101112131415161718import plotly as pyimport plotly.graph_objs as gofrom datetime import datetime# ----------pre defpyplt = p">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/26/1/%5Cimages%5CtimeRange.png">
 
 
 
@@ -128,7 +131,7 @@
 
 
 
-  <title>plotly基础图形-饼图 | Meng Xu Dong</title>
+  <title>plotly高级图形-时间序列 | Meng Xu Dong</title>
   
 
 
@@ -441,7 +444,7 @@ window.onmouseout = function () {
 
         
         
-          <h2 class="post-title" itemprop="name headline">plotly基础图形-饼图</h2>
+          <h2 class="post-title" itemprop="name headline">plotly高级图形-时间序列</h2>
         
 
         <div class="post-meta">
@@ -453,7 +456,7 @@ window.onmouseout = function () {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T18:42:21+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T12:42:36+08:00">
                 2019-02-26
               </time>
             
@@ -507,7 +510,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  592 字
+                  845 字
                 </span>
               
 
@@ -523,7 +526,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -544,29 +547,45 @@ window.onmouseout = function () {
       
 
       
-        <h3 id="plotly绘制饼图"><a href="#plotly绘制饼图" class="headerlink" title="plotly绘制饼图"></a>plotly绘制饼图</h3><p>使用Plotly绘制饼图需要使用 graph_objs 中的 Pie 函数。Pie 函数中最<br>常用的两个属性一个是 values，用于赋给其需要可视化的数据；另一个<br>是 labels，表示不同数据对应的标签。</p>
-<h4 id="饼图："><a href="#饼图：" class="headerlink" title="饼图："></a>饼图：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import plotly as py</span><br><span class="line">import plotly.graph_objs as go</span><br><span class="line"></span><br><span class="line">pyplt = py.offline.plot</span><br><span class="line">labels = [&apos;上海国际集团有限公司&apos;, &apos;中国移动通信集团&apos;,\</span><br><span class="line"> &apos;富德生命人寿-传统&apos;, &apos;富德生命人寿-资本金&apos;, &apos;上海上国投资产管理有限公司&apos;]</span><br><span class="line">values = [4222533311, 4103763711, 2138028672, 1356332558, 1073516173]</span><br><span class="line">colors = [&apos;#104E8B&apos;, &apos;#1874CD&apos;, &apos;#1C86EE&apos;, &apos;#6495ED&apos;]</span><br><span class="line"></span><br><span class="line">trace = [go.Pie(labels = labels, </span><br><span class="line">                values = values,</span><br><span class="line">                rotation = 30,</span><br><span class="line">                opacity = 1,</span><br><span class="line">                showlegend = False,</span><br><span class="line">                pull = [0.1,0,0,0,0],</span><br><span class="line">                hoverinfo = &apos;label+percent&apos;, </span><br><span class="line">                textinfo = &apos;percent&apos;, # textinfo = &apos;value&apos;,</span><br><span class="line">                textfont = dict(size = 30, color = &apos;white&apos;),</span><br><span class="line">                marker = dict(colors = colors, </span><br><span class="line">                    line = dict(color = &apos;#000000&apos;, width = 2)))]</span><br><span class="line">fig = go.Figure(data = trace)</span><br><span class="line">pyplt(trace, filename=&apos;styled_pie_chart.html&apos;)</span><br></pre></td></tr></table></figure>
+        <h3 id="plotly时间序列"><a href="#plotly时间序列" class="headerlink" title="plotly时间序列"></a>plotly时间序列</h3><p>Plotly 对时间序列的支持比较友好，既支持字符串格式，又支持日期/时间格式，而且使用起来相当简单。</p>
+<h4 id="时间序列："><a href="#时间序列：" class="headerlink" title="时间序列："></a>时间序列：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import plotly as py</span><br><span class="line">import plotly.graph_objs as go</span><br><span class="line"></span><br><span class="line">from datetime import datetime</span><br><span class="line"></span><br><span class="line"># ----------pre def</span><br><span class="line">pyplt = py.offline.plot</span><br><span class="line"></span><br><span class="line"># ----------code</span><br><span class="line">x_datetime = [datetime(year=2013, month=10, day=4),</span><br><span class="line">              datetime(year=2013, month=11, day=5),</span><br><span class="line">              datetime(year=2013, month=12, day=6)]</span><br><span class="line">x_string = [&apos;2013-10-04&apos;, &apos;2013-11-05&apos;, &apos;2013-12-06&apos;]</span><br><span class="line"></span><br><span class="line">trace_datetime = go.Scatter(x=x_datetime, y=[1, 3, 6],name=&apos;trace_datetime&apos;)</span><br><span class="line">trace_string = go.Scatter(x=x_string, y=[2, 4, 7],name=&apos;trace_string&apos;)</span><br><span class="line">data = [trace_datetime, trace_string]</span><br><span class="line">pyplt(data, filename=&apos;timeSeries.html&apos;)</span><br></pre></td></tr></table></figure>
 
-<p>[\images\pie_chart.png]</p>
-<h4 id="参数解读"><a href="#参数解读" class="headerlink" title="参数解读"></a>参数解读</h4><ul>
-<li>rotation 参数可以对饼图进行旋转，其取值为0～360。</li>
-<li>opacity 参数用于设置透明度。</li>
-<li>showlegend 参数是布尔类型，True 表示展示图例，False 表示隐藏图例。</li>
-<li>pull参数用于设置组成饼图的各个扇形的突出程度，0表示不突出，本例中通过设置 pull 参数为[0,1,0,0,0,0]，使其中一个扇形突出。</li>
-<li>textinfo 参数用于设置显示在扇形上的是具体数值（value）还是比例（percent）。</li>
-<li>textfont参数用于设置所显示内容的样式，本例中设置了字体大小（size）和字体颜色（color）。</li>
-<li>marker参数用于设置每个扇形的样式，其中colors用于设置颜色</li>
-<li>line用于设置扇形边框的样式。</li>
-<li>direction：饼图方向，有 clockwise（顺时针）和 counterclockwise（逆时针），默认值为 counterclockwise。  dlabel：饼图图标步进值，默认值为1。</li>
-<li>domain：范围，设置各个扇区的大小。</li>
-<li>hole：设置环形饼图内径孔的半径，范围是0～1，默认值为0，参<br>数是与外径的比值。</li>
-<li>label0：生成一组扇区图标的起点数字，默认值为0。</li>
-<li>labels：每个扇区的图标字符串数组列表，一般用Pandas的时索引值。</li>
-<li>legendgroup：图标参数，默认是空字符串。</li>
-<li>name：名称参数。</li>
-<li>pullsrc：各个扇区比例数组列表。</li>
-<li>sort：布尔变量，扇区排序开关。</li>
-<li>values：每个扇区的数值大小。</li>
+<p>![](\images\timeSeries.png）<br>从代码中可以看出，只要传入的 x是日期或时间格式的字符串，Plotly 就会自动识别为时间格式。</p>
+<h4 id="时间范围约束："><a href="#时间范围约束：" class="headerlink" title="时间范围约束："></a>时间范围约束：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">import plotly as py</span><br><span class="line">import plotly.graph_objs as go</span><br><span class="line"></span><br><span class="line">import datetime</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># ----------pre def</span><br><span class="line">pyplt = py.offline.plot</span><br><span class="line"></span><br><span class="line"># ----------code</span><br><span class="line">def to_unix_time(dt):</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    :param dt:datetime类型的时间戳 </span><br><span class="line">    :return: dt相对于utc起始时间差别的毫秒数</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    epoch =  datetime.datetime.utcfromtimestamp(0) # 获取0时刻对应的utc（世界标准时间）</span><br><span class="line">    return (dt - epoch).total_seconds() * 1000 # 计算传入的时间相对于utc的起始时间差别多少毫秒</span><br><span class="line"></span><br><span class="line">x = [datetime.datetime(year=2013, month=10, day=4),</span><br><span class="line">    datetime.datetime(year=2013, month=11, day=5),</span><br><span class="line">    datetime.datetime(year=2013, month=12, day=6)]</span><br><span class="line"></span><br><span class="line">data = [go.Scatter(</span><br><span class="line">            x=x,</span><br><span class="line">            y=[1, 3, 6])]</span><br><span class="line"></span><br><span class="line">layout = go.Layout(xaxis = dict(</span><br><span class="line">                   range = [to_unix_time(datetime.datetime(2013, 10, 17)),</span><br><span class="line">                            to_unix_time(datetime.datetime(2013, 11, 20))]</span><br><span class="line">    ))</span><br><span class="line"></span><br><span class="line">fig = go.Figure(data = data, layout = layout)</span><br><span class="line">pyplt(fig, filename=&apos;timeRange.html&apos;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="%5Cimages%5CtimeRange.png" alt></p>
+<h4 id="滑动选择控件"><a href="#滑动选择控件" class="headerlink" title="滑动选择控件"></a>滑动选择控件</h4><p>Plotly 本身就是可以进行选择展出，滑动选择控件可以更直观的看出被圈出的范围。在这里我们对从本地用 pandas 加载了数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">import plotly as py</span><br><span class="line">import plotly.graph_objs as go</span><br><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line"># ----------pre def</span><br><span class="line">pyplt = py.offline.plot</span><br><span class="line"></span><br><span class="line"># ----------code</span><br><span class="line">df = pd.read_csv(r&apos;day01.csv&apos;,index_col=[0])</span><br><span class="line"></span><br><span class="line">trace = go.Scatter(x=df.index,</span><br><span class="line">                   y=df.close)</span><br><span class="line"></span><br><span class="line">data = [trace]</span><br><span class="line">layout = dict(</span><br><span class="line">    title=&apos;时间序列的滑块与选择器&apos;,</span><br><span class="line">    xaxis=dict(</span><br><span class="line">        rangeselector=dict(</span><br><span class="line">            buttons=list([</span><br><span class="line">                dict(count=1,</span><br><span class="line">                     label=&apos;1m&apos;,</span><br><span class="line">                     step=&apos;month&apos;,</span><br><span class="line">                     stepmode=&apos;backward&apos;),</span><br><span class="line">                dict(count=6,</span><br><span class="line">                     label=&apos;6m&apos;,</span><br><span class="line">                     step=&apos;month&apos;,</span><br><span class="line">                     stepmode=&apos;backward&apos;),</span><br><span class="line">                dict(count=1,</span><br><span class="line">                    label=&apos;YTD&apos;,#今天以来</span><br><span class="line">                    step=&apos;year&apos;,</span><br><span class="line">                    stepmode=&apos;todate&apos;),</span><br><span class="line">                dict(count=1,</span><br><span class="line">                    label=&apos;1y&apos;,</span><br><span class="line">                    step=&apos;year&apos;,</span><br><span class="line">                    stepmode=&apos;backward&apos;),</span><br><span class="line">                dict(step=&apos;all&apos;)</span><br><span class="line">            ])</span><br><span class="line">        ),</span><br><span class="line">        rangeslider=dict(),</span><br><span class="line">        type=&apos;date&apos;</span><br><span class="line">    )</span><br><span class="line">)</span><br><span class="line">fig = dict(data=data, layout=layout)</span><br><span class="line">pyplt(fig,filename=&apos;RangeSlide.html&apos;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="%5Cimages%5CRangeSlide.png" alt><br>滑块与选择器主要是通过 Layout布局函数来实现的。对于选择器，主要在xais.rangeselector.buttons中定义一些参数。</p>
+<pre><code>xaxis=dict(
+        rangeselector=dict(
+            buttons=list([
+                dict(count=1,
+                     label=&apos;1m&apos;,
+                     step=&apos;month&apos;,
+                     stepmode=&apos;backward&apos;),
+                dict(count=6,
+                     label=&apos;6m&apos;,
+                     step=&apos;month&apos;,
+                     stepmode=&apos;backward&apos;),
+                dict(count=1,
+                    label=&apos;YTD&apos;,#今天以来
+                    step=&apos;year&apos;,
+                    stepmode=&apos;todate&apos;),
+                dict(count=1,
+                    label=&apos;1y&apos;,
+                    step=&apos;year&apos;,
+                    stepmode=&apos;backward&apos;),</code></pre><ul>
+<li>xaxis表示对x轴进行定义；</li>
+<li>rangeselector表示对x轴的选择器进行定义；</li>
+<li>buttons表示选择器的按钮，是一个列表形式，每个列表元素都是一个选择器按钮。</li>
+<li>“count=1,step=’month’”表示这个选择器覆盖的时间长度是“1 ×<br>month”，即一个月。“label=’1m’”表示选择器的标签为1m。  </li>
+<li>stepmode有以下两种使用方法:<ul>
+<li>当stepmode=’backward’时，表示从后往前推进count × step时间。例如，当count=1、step=’year’时，表示时间范围将近一年。 </li>
+<li>当 stepmode=’todate’时，一般只有一种用法，就是计算今年以来的时间。例如，当count=1、step=’year’时，表示时间范围从最后日期到最后日期所在的年初，而不是近一年。</li>
+</ul>
+</li>
 </ul>
 
       
@@ -639,8 +658,8 @@ window.onmouseout = function () {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/27/1/" rel="prev" title="plotly与pandas">
-                plotly与pandas <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/26/1/" rel="prev" title="plotly基础图形-饼图">
+                plotly基础图形-饼图 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -810,7 +829,7 @@ window.onmouseout = function () {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#plotly绘制饼图"><span class="nav-text">plotly绘制饼图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#饼图："><span class="nav-text">饼图：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数解读"><span class="nav-text">参数解读</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#plotly时间序列"><span class="nav-text">plotly时间序列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#时间序列："><span class="nav-text">时间序列：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间范围约束："><span class="nav-text">时间范围约束：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#滑动选择控件"><span class="nav-text">滑动选择控件</span></a></li></ol></li></ol></div>
             
 
           </div>
