@@ -420,7 +420,7 @@ window.onmouseout = function () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ben">
@@ -439,7 +439,7 @@ window.onmouseout = function () {
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/18/1/" itemprop="url">python可视化神器-plotly</a></h2>
+                <a class="post-title-link" href="/2019/07/26/1/" itemprop="url">plotly高级图形-时间序列</a></h2>
         
 
         <div class="post-meta">
@@ -451,8 +451,8 @@ window.onmouseout = function () {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-18T02:06:46+08:00">
-                2019-02-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T12:42:36+08:00">
+                2019-07-26
               </time>
             
 
@@ -505,7 +505,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.5k 字
+                  845 字
                 </span>
               
 
@@ -521,7 +521,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -544,11 +544,12 @@ window.onmouseout = function () {
       
         
           
-          本文是浏览 medium 时发现的，这篇文章可以让我们认识到 plotly 的存在使数据可视化分析操作更加简易，交互性更强，效率更高。原文链接The Next Level of Data Visualization in Python数据来源: medium数据注:原文需翻墙，所以进行了转载翻译  
+          plotly时间序列Plotly 对时间序列的支持比较友好，既支持字符串格式，又支持日期/时间格式，而且使用起来相当简单。
+时间序列：123456789101112131415161718import plotly as pyimport plotly.graph_objs as gofrom da
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/02/18/1/#more" rel="contents">
+            <a class="btn" href="/2019/07/26/1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -599,7 +600,7 @@ window.onmouseout = function () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/14/1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ben">
@@ -618,7 +619,7 @@ window.onmouseout = function () {
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/14/1/" itemprop="url">推荐系统中的数据挖掘方法</a></h2>
+                <a class="post-title-link" href="/2019/07/24/1/" itemprop="url">plotly基础图形-甘特图</a></h2>
         
 
         <div class="post-meta">
@@ -630,8 +631,8 @@ window.onmouseout = function () {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-14T22:58:09+08:00">
-                2018-07-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-24T18:41:52+08:00">
+                2019-07-24
               </time>
             
 
@@ -653,8 +654,8 @@ window.onmouseout = function () {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/推荐系统/" itemprop="url" rel="index">
-                    <span itemprop="name">推荐系统</span>
+                  <a href="/categories/数据分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据分析</span>
                   </a>
                 </span>
 
@@ -684,7 +685,524 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  96 字
+                  820 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          plotly绘制甘特图甘特图（Gantt Chart）又称为横道图，通过条形来显示项目的进度、时间的安排等与时间相关的情况。绘制甘特图的函数是 Plotly.figure_factory 中的 create_gantt，通过传递包含事件（Task）与开始、结束（Start、Finish）时间的数据来
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/24/1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ben">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Meng Xu Dong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/24/1/" itemprop="url">plotly基础图形-柱状图</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-24T18:39:15+08:00">
+                2019-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          plotly绘制柱状图使用Plotly绘制基本柱状图最重要的函数是 graph_objs 中的 Bar 函数，通过传递数据，可以设置柱状图的样式。在 Layout 中对 barmode 进行设置可以绘制出不同类型的柱状图。
+基础柱状图：在实际应用过程中，数据集往往并不完美，可能有缺失的数据，在Plo
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/24/1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ben">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Meng Xu Dong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/24/1/" itemprop="url">plotly基础图形-线形图</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-24T18:38:30+08:00">
+                2019-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          plotly绘制线形图线形图的绘制在散点图的绘制中提及过，用 Plotly 绘制线形图使用 Scatter 函数。
+线形图的数据缺口与连接：在实际应用过程中，数据集往往并不完美，可能有缺失的数据，在Plotly中可以通过设置 Scatter 函数中的 connectgaps 属性来显示这些数据缺口或
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/24/1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ben">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Meng Xu Dong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/27/1/" itemprop="url">plotly与pandas</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-27T18:43:26+08:00">
+                2019-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  411 字
                 </span>
               
 
@@ -723,169 +1241,11 @@ window.onmouseout = function () {
       
         
           
-          1. 推荐系统中的数据挖掘方法概览&emsp;&emsp;数据挖掘过程一般是由三个连续的执行步骤组成，本章不会过多的介绍这些方法，只是做一个总结，详细的过程以及公式推导建议大家去阅读《统计学方法》以及《推荐系统 技术、评估及高效算法》。。  
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/14/1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ben">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Meng Xu Dong">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/04/1/" itemprop="url">基于内容的语义感知系统</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-04T00:13:34+08:00">
-                2018-07-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2.6k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  8 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          1. 基于内容的推荐系统&emsp;&emsp;基于内容的推荐系统依赖物品和用户描述内容来构建其特征表示，然后基于这些特征表示推荐与目标用户曾明确表达过喜好的物品相类似的物品。该类推荐系统的基本过程是对目标用户属性(偏好，兴趣)与物品属性进行匹配，并返回目标用户在物品上的喜好程度。&emsp;&em
+          使用cufflinks绘图为了方便绘图，Plotly 为 Pandas 做了特殊的封装，这个封装模块就是 cufflinks。cufflinks 的作用是改变 Pandas 绘图的默认呈现方式。Pandas 绘图默认的呈现方式是 Matplotlib，cufflinks 把这种呈现方式改为 Plot
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/04/1/#more" rel="contents">
+            <a class="btn" href="/2019/02/27/1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -936,7 +1296,7 @@ window.onmouseout = function () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/01/1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/26/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ben">
@@ -955,7 +1315,7 @@ window.onmouseout = function () {
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/01/1/" itemprop="url">基于近邻推荐方法综述</a></h2>
+                <a class="post-title-link" href="/2019/02/26/1/" itemprop="url">plotly基础图形-饼图</a></h2>
         
 
         <div class="post-meta">
@@ -967,8 +1327,8 @@ window.onmouseout = function () {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-01T00:10:38+08:00">
-                2018-07-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T18:42:21+08:00">
+                2019-02-26
               </time>
             
 
@@ -990,8 +1350,8 @@ window.onmouseout = function () {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/推荐系统/" itemprop="url" rel="index">
-                    <span itemprop="name">推荐系统</span>
+                  <a href="/categories/数据分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据分析</span>
                   </a>
                 </span>
 
@@ -1021,7 +1381,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.7k 字
+                  592 字
                 </span>
               
 
@@ -1037,7 +1397,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -1060,12 +1420,12 @@ window.onmouseout = function () {
       
         
           
-          &emsp;&emsp;本文主要是对推荐系统中常用的常用算法的适用性以及优劣做一个总结，以让自己有一个更加清晰的认识，不会涉及公式以及算法的实现。
-1 基于近邻推荐方法综述&emsp;&emsp;基于领域的推荐方法中主要包括了两种著名的推荐方法：基于用户的推荐和基于物品的推荐。在基于用户的推荐系统中
+          plotly绘制饼图使用Plotly绘制饼图需要使用 graph_objs 中的 Pie 函数。Pie 函数中最常用的两个属性一个是 values，用于赋给其需要可视化的数据；另一个是 labels，表示不同数据对应的标签。
+饼图：1234567891011121314151617181920212
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/01/1/#more" rel="contents">
+            <a class="btn" href="/2019/02/26/1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1116,7 +1476,7 @@ window.onmouseout = function () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ben">
@@ -1135,7 +1495,7 @@ window.onmouseout = function () {
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/01/1/" itemprop="url">算法之路-常见字符串处理总结</a></h2>
+                <a class="post-title-link" href="/2019/02/25/1/" itemprop="url">plotly基础图形-直方图</a></h2>
         
 
         <div class="post-meta">
@@ -1147,8 +1507,8 @@ window.onmouseout = function () {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T00:01:55+08:00">
-                2018-06-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-25T19:42:13+08:00">
+                2019-02-25
               </time>
             
 
@@ -1170,8 +1530,8 @@ window.onmouseout = function () {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法之路/" itemprop="url" rel="index">
-                    <span itemprop="name">算法之路</span>
+                  <a href="/categories/数据分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据分析</span>
                   </a>
                 </span>
 
@@ -1201,7 +1561,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k 字
+                  902 字
                 </span>
               
 
@@ -1217,7 +1577,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -1240,13 +1600,11 @@ window.onmouseout = function () {
       
         
           
-          &emsp;&emsp;字符串处理是算法中比较重要的一部分。在本篇中，主要介绍一系列常见并且重要的字符串处理算法。
-1.1 易位构词
-定义&emsp;&emsp;如果对调字符，使得单词 w 变成单词 v，那么 w 就是 v 的易位构词。输入一个集合包含n个最大长度为  k 的单词，输出找到所有的易位
+          plotly绘制直方图使用 Plotly 绘制直方图需要用到 graph_objs 包中的 Histogram 函数。将数据赋值给函数中的x变量，即x = data，即可绘制直方图；若将数据赋值给y变量，则绘制水平直方图。histnorm 是 Histogram 函数的另一个属性，默认状态下表示直方
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/01/1/#more" rel="contents">
+            <a class="btn" href="/2019/02/25/1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1297,7 +1655,7 @@ window.onmouseout = function () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ben">
@@ -1316,7 +1674,7 @@ window.onmouseout = function () {
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/06/1/" itemprop="url">推荐系统思维导图与架构</a></h2>
+                <a class="post-title-link" href="/2019/02/25/1/" itemprop="url">plotly基础图形-面积图</a></h2>
         
 
         <div class="post-meta">
@@ -1328,8 +1686,8 @@ window.onmouseout = function () {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T22:57:01+08:00">
-                2018-05-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-25T18:42:00+08:00">
+                2019-02-25
               </time>
             
 
@@ -1351,8 +1709,8 @@ window.onmouseout = function () {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/推荐系统/" itemprop="url" rel="index">
-                    <span itemprop="name">推荐系统</span>
+                  <a href="/categories/数据分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据分析</span>
                   </a>
                 </span>
 
@@ -1382,7 +1740,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.5k 字
+                  361 字
                 </span>
               
 
@@ -1398,7 +1756,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8 分钟
+                  1 分钟
                 </span>
               
             </div>
@@ -1421,15 +1779,12 @@ window.onmouseout = function () {
       
         
           
-          &emsp;&emsp;本文主要是对《推荐系统技术 评估及高效算法》以及《推荐系统实战》两本书的总结，在后续的文章中会逐渐补充详细内容。
-1. 推荐系统思维导图梳理
-2. 推荐引擎架构&emsp;&emsp;推荐引擎使用一种或几种用户特征，按照一种推荐策略生成一种类型物品的推荐列表。
-
-推荐系统引擎
+          plotly绘制面积图基本面积图：使用 Plotly 绘制面积图与绘制散点图和折线图相同，都使用 plotlygraph_objs 中的 Scatter 函数，不同之处在于面积图对于 fill 属性的设置，相当于在折线图的基础上对图形进行填充。。
+12345678910111213141516171
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/06/1/#more" rel="contents">
+            <a class="btn" href="/2019/02/25/1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1480,7 +1835,7 @@ window.onmouseout = function () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/11/1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ben">
@@ -1499,7 +1854,7 @@ window.onmouseout = function () {
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/11/1/" itemprop="url">Python微信防撤回</a></h2>
+                <a class="post-title-link" href="/2019/02/22/1/" itemprop="url">plotly基础图形-气泡图</a></h2>
         
 
         <div class="post-meta">
@@ -1511,169 +1866,8 @@ window.onmouseout = function () {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-11T23:44:49+08:00">
-                2017-12-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  768 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          &emsp;&emsp;主要通过python微信库itchat，itchat可以实现很多有意思的够不够能比如:微信防撤回，微信红包提醒，微信机器人自动回复等。有关itcht的使用可以查看更多官方文档。下方代码实现了微信防撤回功能。
-
-python3.6
-
-1234567891011121314151
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/11/1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/20/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ben">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Meng Xu Dong">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/20/1/" itemprop="url">MYSQL性能优化</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T00:28:19+08:00">
-                2017-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-22T18:35:21+08:00">
+                2019-02-22
               </time>
             
 
@@ -1695,8 +1889,8 @@ python3.6
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
+                  <a href="/categories/数据分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据分析</span>
                   </a>
                 </span>
 
@@ -1726,7 +1920,7 @@ python3.6
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2k 字
+                  543 字
                 </span>
               
 
@@ -1742,7 +1936,7 @@ python3.6
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -1765,14 +1959,12 @@ python3.6
       
         
           
-          1.项目中常用的MySQL优化方法1. EXPLAIN做MySQL优化，我们要善用EXPLAIN查看SQL执行计划。
-type列，连接类型。一个好的SQL语句至少要达到range级别。杜绝出现all级别。  
-key列，使用到的索引名。如果没有选择索引，值是NULL。可以采取强制索引方式。  
-ke
+          plotly绘制气泡图气泡图的实现方法与散点图的实现方法类似，修改散点图中的点的大小，就变成了气泡图。
+实现代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849impo
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/11/20/1/#more" rel="contents">
+            <a class="btn" href="/2019/02/22/1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1823,7 +2015,7 @@ ke
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/18/1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ben">
@@ -1842,7 +2034,7 @@ ke
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/18/1/" itemprop="url">MYSQL中的控制流程函数</a></h2>
+                <a class="post-title-link" href="/2019/02/22/1/" itemprop="url">plotly基础图形-散点图</a></h2>
         
 
         <div class="post-meta">
@@ -1854,8 +2046,8 @@ ke
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-18T21:49:05+08:00">
-                2017-11-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-22T15:29:51+08:00">
+                2019-02-22
               </time>
             
 
@@ -1877,8 +2069,8 @@ ke
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
+                  <a href="/categories/数据分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据分析</span>
                   </a>
                 </span>
 
@@ -1908,7 +2100,7 @@ ke
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  997 字
+                  944 字
                 </span>
               
 
@@ -1924,7 +2116,7 @@ ke
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -1947,197 +2139,12 @@ ke
       
         
           
-          控制流程函数
-CASE value WHEN [compare-value] THEN result [WHEN [compare-value] THEN result …] [ELSE result] END返回当 value = compare-value 的 result  
-
-CASE WH
+          plotly绘制散点图线形图又称为曲线图，是最常用的图形类型。与传统的绘图软件不同，Plotly没有独立的线形图函数，而是把线形图与散点图全部用 Scatter 函数实现。
+代码：123456789101112131415161718192021222324252627282930313233343
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/11/18/1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/17/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ben">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Meng Xu Dong">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/17/1/" itemprop="url">MYSQL比较函数和操作符</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-17T20:55:32+08:00">
-                2017-11-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.4k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          MySQL 按照以下规则进行数值比较：本文转载自实验楼,同学们可以在实验楼《Mysql基础教程中》学习。
-
-若函数中有一个或两个参数都是NULL，则比较运算的结果为NULL，除非是等号比较运算符&lt;=&gt;。
-若同一个比较运算中的两个参数都是字符串类型，则作为字符串进行比较。
-若两个参数均为整
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/17/1/#more" rel="contents">
+            <a class="btn" href="/2019/02/22/1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2179,7 +2186,7 @@ CASE WH
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2227,7 +2234,7 @@ CASE WH
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2249,7 +2256,7 @@ CASE WH
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
