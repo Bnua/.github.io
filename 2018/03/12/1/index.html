@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="mysql,">
+  <meta name="keywords" content="机器学习,">
 
 
 
@@ -81,18 +81,20 @@
 
 
 
-<meta name="description" content="1. mysql的安装 系统：Ubuntu Server 16.04.1 LTS 64位  1234#安装 MySQL 服务端sudo apt-get install mysql-server#安装 MySQL 客户端sudo apt-get install mysql-client  安装过程中自己设置root密码 12#查看是否安装成功sudo netstat -tap | grep mysq">
-<meta name="keywords" content="mysql">
+<meta name="description" content="过拟合和欠拟合过拟合是指模型能很好地拟合训练样本，但对新数据的预测准确性很差。欠拟合是指模型不能很好地拟合训练样本，且对新数据的预测准确性也不好。如下图：注释:本文中的图形可视化使用的书中的参考代码，有部分做了更改，建议大家有时间可以读一下《scikit-learn机器学习：常用算法原理及编程实战》左边是欠拟合（ underfitting ），也称为高偏差（ high bias ），因为我们试图用">
+<meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu下mysql的安装问题总结">
-<meta property="og:url" content="http://yoursite.com/2017/11/12/1/index.html">
+<meta property="og:title" content="机器学习基础概念（二）">
+<meta property="og:url" content="http://yoursite.com/2018/03/12/1/index.html">
 <meta property="og:site_name" content="Meng Xu Dong">
-<meta property="og:description" content="1. mysql的安装 系统：Ubuntu Server 16.04.1 LTS 64位  1234#安装 MySQL 服务端sudo apt-get install mysql-server#安装 MySQL 客户端sudo apt-get install mysql-client  安装过程中自己设置root密码 12#查看是否安装成功sudo netstat -tap | grep mysq">
+<meta property="og:description" content="过拟合和欠拟合过拟合是指模型能很好地拟合训练样本，但对新数据的预测准确性很差。欠拟合是指模型不能很好地拟合训练样本，且对新数据的预测准确性也不好。如下图：注释:本文中的图形可视化使用的书中的参考代码，有部分做了更改，建议大家有时间可以读一下《scikit-learn机器学习：常用算法原理及编程实战》左边是欠拟合（ underfitting ），也称为高偏差（ high bias ），因为我们试图用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-04T20:37:19.254Z">
+<meta property="og:image" content="http://yoursite.com/images/guonihe.PNG">
+<meta property="og:updated_time" content="2019-07-31T15:03:57.400Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu下mysql的安装问题总结">
-<meta name="twitter:description" content="1. mysql的安装 系统：Ubuntu Server 16.04.1 LTS 64位  1234#安装 MySQL 服务端sudo apt-get install mysql-server#安装 MySQL 客户端sudo apt-get install mysql-client  安装过程中自己设置root密码 12#查看是否安装成功sudo netstat -tap | grep mysq">
+<meta name="twitter:title" content="机器学习基础概念（二）">
+<meta name="twitter:description" content="过拟合和欠拟合过拟合是指模型能很好地拟合训练样本，但对新数据的预测准确性很差。欠拟合是指模型不能很好地拟合训练样本，且对新数据的预测准确性也不好。如下图：注释:本文中的图形可视化使用的书中的参考代码，有部分做了更改，建议大家有时间可以读一下《scikit-learn机器学习：常用算法原理及编程实战》左边是欠拟合（ underfitting ），也称为高偏差（ high bias ），因为我们试图用">
+<meta name="twitter:image" content="http://yoursite.com/images/guonihe.PNG">
 
 
 
@@ -122,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/12/1/">
+  <link rel="canonical" href="http://yoursite.com/2018/03/12/1/">
 
 
 
 
 
-  <title>Ubuntu下mysql的安装问题总结 | Meng Xu Dong</title>
+  <title>机器学习基础概念（二） | Meng Xu Dong</title>
   
 
 
@@ -424,7 +426,7 @@ window.onmouseout = function () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/12/1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ben">
@@ -441,7 +443,7 @@ window.onmouseout = function () {
 
         
         
-          <h2 class="post-title" itemprop="name headline">Ubuntu下mysql的安装问题总结</h2>
+          <h2 class="post-title" itemprop="name headline">机器学习基础概念（二）</h2>
         
 
         <div class="post-meta">
@@ -453,8 +455,8 @@ window.onmouseout = function () {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-12T04:29:44+08:00">
-                2017-11-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T01:51:56+08:00">
+                2018-03-12
               </time>
             
 
@@ -476,8 +478,8 @@ window.onmouseout = function () {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
                   </a>
                 </span>
 
@@ -507,7 +509,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  425 字
+                  1.6k 字
                 </span>
               
 
@@ -523,7 +525,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -544,25 +546,35 @@ window.onmouseout = function () {
       
 
       
-        <h2 id="1-mysql的安装"><a href="#1-mysql的安装" class="headerlink" title="1. mysql的安装"></a>1. mysql的安装</h2><ul>
-<li><strong>系统</strong>：Ubuntu Server 16.04.1 LTS 64位</li>
+        <h2 id="过拟合和欠拟合"><a href="#过拟合和欠拟合" class="headerlink" title="过拟合和欠拟合"></a>过拟合和欠拟合</h2><p><strong>过拟合</strong>是指模型能很好地拟合训练样本，但对新数据的预测准确性很差。<br><strong>欠拟合</strong>是指模型不能很好地拟合训练样本，且对新数据的预测准确性也不好。<br>如下图：<br><code>注释:本文中的图形可视化使用的书中的参考代码，有部分做了更改，建议大家有时间可以读一下《scikit-learn机器学习：常用算法原理及编程实战》</code><br><img src="/images/guonihe.PNG" alt><br>左边是欠拟合（ underfitting ），也称为高偏差（ high bias ），因为我们试图用一条直线来拟合样本数据。右边是过拟合（ overfitting ），也称为高方差（ high variance) 用了十阶多项式来 合数据，虽然模型对现有的数据集拟合得很好，但对新数据预测误<br>却很大。只有中间的模型较好地拟合了数据集，可以看到虚线和实线基本重合。</p>
+<h2 id="成本函数"><a href="#成本函数" class="headerlink" title="成本函数"></a>成本函数</h2><p>成本是衡量模型与训练样本符合程度的指标。简单地理解，成本是针对所有的训练样本，模型拟合出来的值与训练样本的真实值的误差平均值 而成本函数就是成本与模型参数的函数关系。模型训练的过程，就是找出合适的模型参数，使得成本函数的值最小。成本函数记为 $J(\theta)$ 其中 $\theta$ 表示模型参数<br>我们用一阶多项式来拟合数据，则得到的模型是 $y＝\theta_0+\theta_1x$，其中$\theta_0,\theta_1$构成的向 就是模型参数,训练这个模型的目标，就是找出合适的模型参数，使得所有的点到这条直线上的距离最短。<br>根据成本函数的定义，我们可以很容易得出模型的成本函数公式：<br>$$J \left ( \theta\right )= \frac{1}{2m}\sum_{i=1}^{m}\left ( h_{\theta }\left ( x^{\left ( i \right )} \right )-y^{\left ( i \right )} \right )^{2}$$<br>其中， $m$是训练样本个数，在我们的例子里，是 20 个点，而  $h（x^i）$ 就是模型对每个样本的预测值， $y^i$是每个样本的真实值 这个公式实际上就是线性回归算法的成本函数。<br>在过拟合和欠拟合那里我们也清楚如果训练样本到曲线距离的平均值变小，也可能会产生过拟合现象。</p>
+<h2 id="模型准确性"><a href="#模型准确性" class="headerlink" title="模型准确性"></a>模型准确性</h2><p>模型准确性的验证我们可以使用测试数据集的成本函数来评估，$J(\theta)$ 越小，我们的模型准确性就越高。</p>
+<h2 id="模型性能的不同表达方式"><a href="#模型性能的不同表达方式" class="headerlink" title="模型性能的不同表达方式"></a>模型性能的不同表达方式</h2><p>在scikit-learn里，不使用成本函数来表达模型的性能，而使用分数来表达，这个分数总是在 [0,1] 之 间，数值越大说明模型的准确性越好。当模型训练完成后，调用模型score(X _test, y _test） 即可算出模型的分数值，其中 X_test和Y_test是测试数据集样本。<br>模型分数（准确性〉与成本成反比即分数越大，准确性越高，误差越小，成本越低反之，分数越小，准确性越低，误差越大，成本越高。</p>
+<h2 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h2><p>第一种是<strong>简单交叉验证</strong>，所谓的简单，是和其他交叉验证方法相对而言的。首先，我们随机的将样本数据分为两部分（比如： 70%的训练集，30%的测试集），然后用训练集来训练模型，在测试集上验证模型及参数。接着，我们再把样本打乱，重新选择训练集和测试集，继续训练数据和检验模型。最后我们选择损失函数评估最优的模型和参数。　<br>第二种是<strong>S折交叉验证</strong>（S-Folder Cross Validation）。和第一种方法不同，S折交叉验证会把样本数据随机的分成S份，每次随机的选择S-1份作为训练集，剩下的1份做测试集。当这一轮完成后，重新随机选择S-1份来训练数据。若干轮（小于S）之后，选择损失函数评估最优的模型和参数。<br>第三种是<strong>留一交叉验证</strong>（Leave-one-out Cross Validation），它是第二种情况的特例，此时S等于样本数N，这样对于N个样本，每次选择N-1个样本来训练数据，留一个样本来验证模型预测的好坏。此方法主要用于样本量非常少的情况，比如对于普通适中问题，N小于50时，我一般采用留一交叉验证。</p>
+<h2 id="学习曲线"><a href="#学习曲线" class="headerlink" title="学习曲线"></a>学习曲线</h2><p>如果数据集的大小为m，则通过下面的流程即可画出学习曲线</p>
+<ul>
+<li>把数据集分成训练数据集和交叉验证数据集。</li>
+<li>取训练数据集的 20% 作为训练样本，训练出模型参数。</li>
+<li>使用交叉验证数据集来计算训练出来的模型的准确性。</li>
+<li>以训练数据集的准确性，交叉验证的准确性作为纵坐标，训练数据集个数作为横坐标，在坐标轴上画出上述步骤计算出来的模型准确性</li>
+<li>训练数据集增加 10% ，跳到步骤 3 继续执行，直到训练数据集大小为 100%为止。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#安装 MySQL 服务端</span><br><span class="line">sudo apt-get install mysql-server</span><br><span class="line">#安装 MySQL 客户端</span><br><span class="line">sudo apt-get install mysql-client</span><br></pre></td></tr></table></figure>
-
-<p>安装过程中自己设置root密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#查看是否安装成功</span><br><span class="line">sudo netstat -tap | grep mysql</span><br></pre></td></tr></table></figure>
-
-<p>查看是否安装成功，如果出现如下提示，则安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@VM-0-11-ubuntu:~$ sudo netstat -tap | grep mysql</span><br><span class="line">tcp 0 0 localhost.localdo:mysql *:* LISTEN  25092/mysqld</span><br></pre></td></tr></table></figure>
-
-<p>使用如下两条命令，打开 MySQL 服务并使用 root 用户登录：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 启动 MySQL 服务</span><br><span class="line">sudo service mysql start</span><br><span class="line"># 使用 root 用户登录，实验楼环境的密码为空，直接回车就可以登录</span><br><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
-
-<p>在安装过程会提示输入密码，但是输入的密码没有作用，并且出现如下的错误，我把自己怎么改的教程直接贴出来，照着我的改然后重新登录就可以了。</p>
-<p><strong>错误</strong>:&emsp;<code>ERROR 1045 (28000): Access denied for user &#39;root&#39;@&#39;localhost&#39;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#使用sudo cat /etc/mysql/debian.cnf查看用户名密码</span><br><span class="line">ubuntu@VM-0-11-ubuntu:~$ sudo cat /etc/mysql/debian.cnf </span><br><span class="line">[client]</span><br><span class="line">host     = localhost</span><br><span class="line">user     = debin-sys-mat</span><br><span class="line">password = he5gNV6mzFoxQc</span><br><span class="line">socket   = /var/run/mysqld/mysqld.sock</span><br><span class="line">[mysql_upgrade]</span><br><span class="line">host     = localhost</span><br><span class="line">user     = debin-sys-mat</span><br><span class="line">password = he5gNV6mzFoxQc</span><br><span class="line">socket   = /var/run/mysqld/mysqld.sock用户以及密码</span><br><span class="line">#出现的user=debin-sys-mat是用户名，password = he5gNV6mzFoxQc为密码</span><br><span class="line"></span><br><span class="line">#用查询到的用户名以及密码登陆</span><br><span class="line">mysql -udebin-sys-mat -phe5gNV6mzFoxQc</span><br><span class="line">#注意用户名和密码之前分别有 -u和-p</span><br><span class="line"></span><br><span class="line">#用下边命令改root密码</span><br><span class="line">update user set authentication_string=password(&apos;要改的密码&apos;) where user=&quot;root&quot;;</span><br><span class="line"></span><br><span class="line">#mysql 新设置用户或更改密码后需用flush privileges刷新MySQL的系统权限相关表，否则会出现拒绝访问。</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
-
-<p>这样就安装好并且可以使用mysql。</p>
+<p>学习曲线要表达的内容是，当训练数据集增加时，模型对训练数据集拟合的准确性以及对交叉验证数据集预测的准确性的变化规律。</p>
+<h2 id="过拟合和欠拟合的特征"><a href="#过拟合和欠拟合的特征" class="headerlink" title="过拟合和欠拟合的特征"></a>过拟合和欠拟合的特征</h2><ul>
+<li>过拟合：模型对训练数据集的准确性比较高，其成本 $J(\theta)$  比较低 对交叉验证数据集的准确性比较低 其成本 $J(\theta)$  比较高。</li>
+<li>欠拟合：模型对训练数据集的准确性比较低，其成本 $J(\theta)$较高，对交叉验证数则相反。</li>
+</ul>
+<p>一个好的机器学习算法应该是对训练数据集准确性高、成本本低，即较准确地拟合数据，同时对交叉验证数据 准确性 、成本低、误 ，即对未知数据有良好的预测性。</p>
+<h2 id="算法模型性能优化"><a href="#算法模型性能优化" class="headerlink" title="算法模型性能优化"></a>算法模型性能优化</h2><p><strong>过拟合:</strong></p>
+<ul>
+<li>获取更多的训练、数据</li>
+<li>减少输入的特征数量</li>
+</ul>
+<p><strong>欠拟合：</strong></p>
+<ul>
+<li>增加有价值的特征</li>
+<li>增加多项式特征<h2 id="查准率和召回率"><a href="#查准率和召回率" class="headerlink" title="查准率和召回率"></a>查准率和召回率</h2>查准率和召回率在下一篇文章中会详细说一下。</li>
+</ul>
 
       
     </div>
@@ -609,7 +621,7 @@ window.onmouseout = function () {
       
         <div class="post-tags">
           
-            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i>mysql</a>
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i>机器学习</a>
           
         </div>
       
@@ -622,8 +634,8 @@ window.onmouseout = function () {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/02/1/" rel="next" title="pip修改默认镜像源">
-                <i class="fa fa-chevron-left"></i> pip修改默认镜像源
+              <a href="/2018/03/09/1/" rel="next" title="机器学习基础概念">
+                <i class="fa fa-chevron-left"></i> 机器学习基础概念
               </a>
             
           </div>
@@ -632,8 +644,8 @@ window.onmouseout = function () {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/13/1/" rel="prev" title="MYSQL基础操作总结（一）">
-                MYSQL基础操作总结（一） <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/12/1/" rel="prev" title="机器学习查准率和召回率">
+                机器学习查准率和召回率 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -803,7 +815,7 @@ window.onmouseout = function () {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mysql的安装"><span class="nav-text">1. mysql的安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#过拟合和欠拟合"><span class="nav-text">过拟合和欠拟合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成本函数"><span class="nav-text">成本函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型准确性"><span class="nav-text">模型准确性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型性能的不同表达方式"><span class="nav-text">模型性能的不同表达方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉验证"><span class="nav-text">交叉验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习曲线"><span class="nav-text">学习曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过拟合和欠拟合的特征"><span class="nav-text">过拟合和欠拟合的特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法模型性能优化"><span class="nav-text">算法模型性能优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查准率和召回率"><span class="nav-text">查准率和召回率</span></a></li></ol></div>
             
 
           </div>
