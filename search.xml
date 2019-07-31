@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[scikit-learn机器学习之K-近邻算法]]></title>
+    <url>%2F2019%2F08%2F01%2F1%2F</url>
+    <content type="text"><![CDATA[k－近邻算法 它是一个有监督的机器学习算法。近邻算法也称为 Knn法，可以解决分类问题，也可以解决回归问题。 ##算法原理K－近邻算法的核心思想是未标记样本的类别，由距离其最近 个邻居投票来决定。假设，我们有一个已经标记的数据集，即己经知道了数据集中每个样本所属的类别此时，有一个未标记的数据样本，我们的任务是预测出这个数据样本所属的类别 ，近邻算法的原理是，计算待标记的数据样本和数据集中每个样本的距离，取距离最近的 k 个样本。待标记的数据样本所属的类别，就由这 k 个距离 近的样本投票产生。假设 test数据集 待标记的数据样本， train数据集为己标记的数据集，算法原理的伪代码如下： 遍历 train 中的所有样本，计算每个样本与 test 的距离，并且把距离保存在 Distance 数组中。 对 Distance 数组进行排序，取距离最近的K个点，为X_Knn。 在 X_knn 中统计每个类别的数量。比如 class 0 在 X_Knn 中几个样本等。 待标记样本的类别，就是在X_knn中样本个数最多的那个。##算法优缺点优点：准确性高，对异常值和 噪声有较高的容忍度缺点：计算量较大，对内存的需求也较大。从算法原理可以看出来，每次对一个未标记样本进行分类时，都需要全部计算遍距离。 算法参数其算法参数是k, 参数选择需要根据数据来决定。k 值越大，模型的偏差越大，对噪声数据越不敏感，当 k 值很大时 可能造成模型欠拟合，k 值越小，模型的方差就会越大，当k 值太小， 就会造成模型过拟合。 算法的变种k-近邻算法有一些变种，其中之一就是可以增加邻居的权重。默认情况下，在计算距离时，都是使用相同权重。实际上，我们可以针对不同的邻居指定不同的距离权，如距离越近权重越高。这个可以通过指定算法的 weights 参数来实现。另外一个变种是使用一定半径内的点取代距离最近的k个点。在 sc ikit-learn 中 RadiusNeighborsClassifier 类实现了这个算法的变种。当数据采样不均匀时 该算法变种可以取得更好的性能 sklearn中的Knn生成已经标记的数据12345678910111213%matplotlib inlineimport matplotlib.pyplot as pltimport numpy as npfrom sklearn.datasets.samples_generator import make_blobscenters = [[-2, 2], [2, 2], [0, 4]]X, y = make_blobs(n_samples=60, centers=centers, random_state=0, cluster_std=0.60)plt.figure(figsize=(16, 10))c = np.array(centers)plt.scatter(X[:, 0], X[:, 1], c=y, s=100, cmap=&apos;cool&apos;); plt.scatter(c[:, 0], c[:, 1], s=100, marker=&apos;^&apos;, c=&apos;orange&apos;); 代码解读 1-4行导入所需要的包 6行设置中心点数据 7行使用 make_blobs 生成数据集。生 60 个训练样本，这 60 样本分布在以 centers 参数指定中心点周围。cluster std 是标准差，用来指明生成的点分布的松散程度。生成的训练数据集 X 放在变量里面，数据集的类别标记放在Y里面 12行画出样本，具体的画图操作以及参数前几天有篇博文讲到了 13行画出中心点使用 KNeighborsC lassifier 进行预测123456789101112131415161718192021from sklearn.neighbors import KNeighborsClassifier# 模型训练k = 5clf = KNeighborsClassifier(n_neighbors=k)clf.fit(X, y);# 进行预测X_sample = [0, 2]X_sample = np.array(X_sample).reshape(1, -1)y_sample = clf.predict(X_sample);neighbors = clf.kneighbors(X_sample, return_distance=False);# 画出示意图plt.figure(figsize=(16, 10))plt.scatter(X[:, 0], X[:, 1], c=y, s=100, cmap=&apos;cool&apos;) # 样本plt.scatter(c[:, 0], c[:, 1], s=100, marker=&apos;^&apos;, c=&apos;k&apos;) # 中心点plt.scatter(X_sample[0][0], X_sample[0][1], marker=&quot;x&quot;, s=100, cmap=&apos;cool&apos;) # 待预测的点for i in neighbors[0]: # 预测点与距离最近的 5 个样本的连线 plt.plot([X[i][0], X_sample[0][0]], [X[i][1], X_sample[0][1]], &apos;k--&apos;, linewidth=0.6); 从图中我们也可以看到K-近邻算法的原理 总结前边写了KNN的分类问题，之前我们说过KNN还可以用于回归问题，如果有兴趣可以自己搞一下。进行回归拟合的算法是 sklearn.neighbors.KNeighborsRegressor 类。]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>scikit-learn</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[《上瘾》学习笔记]]></title>
     <url>%2F2019%2F03%2F29%2F1%2F</url>
     <content type="text"><![CDATA[简介一旦成功地使用户对产品形成了使用习惯，企业就能获益匪浅，具体的变现在： 更高的用户终身价值 更大的价格灵活性 更快速的增长 更强的竞争优势 《上瘾》中总结了一套“上瘾模型”，可以让用户对产品连续循环，让用户不知不觉依赖上产品。 上瘾模式 触发: 促使做出某种举动的诱惑 行动: 对某种回报心怀期待的情况下做出的举动 多变的酬赏： 激发人们对某种事物的强烈渴望 投入： 提高用户以后再次进入上瘾循环的概率 思维导图]]></content>
@@ -243,6 +255,17 @@
       </categories>
       <tags>
         <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[python-plt.scatter参数详解]]></title>
+    <url>%2F2018%2F03%2F07%2F1%2F</url>
+    <content type="text"><![CDATA[准备自己写的时候，发现网上有一个总结挺好的。直接转载一下plt.scatter各参数详解]]></content>
+      <categories>
+        <category>数据分析</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
