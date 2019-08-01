@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[scikit-learn机器学习之K-近邻算法]]></title>
-    <url>%2F2019%2F08%2F01%2F1%2F</url>
-    <content type="text"><![CDATA[k－近邻算法 它是一个有监督的机器学习算法。近邻算法也称为 Knn法，可以解决分类问题，也可以解决回归问题。 ##算法原理K－近邻算法的核心思想是未标记样本的类别，由距离其最近 个邻居投票来决定。假设，我们有一个已经标记的数据集，即己经知道了数据集中每个样本所属的类别此时，有一个未标记的数据样本，我们的任务是预测出这个数据样本所属的类别 ，近邻算法的原理是，计算待标记的数据样本和数据集中每个样本的距离，取距离最近的 k 个样本。待标记的数据样本所属的类别，就由这 k 个距离 近的样本投票产生。假设 test数据集 待标记的数据样本， train数据集为己标记的数据集，算法原理的伪代码如下： 遍历 train 中的所有样本，计算每个样本与 test 的距离，并且把距离保存在 Distance 数组中。 对 Distance 数组进行排序，取距离最近的K个点，为X_Knn。 在 X_knn 中统计每个类别的数量。比如 class 0 在 X_Knn 中几个样本等。 待标记样本的类别，就是在X_knn中样本个数最多的那个。##算法优缺点优点：准确性高，对异常值和 噪声有较高的容忍度缺点：计算量较大，对内存的需求也较大。从算法原理可以看出来，每次对一个未标记样本进行分类时，都需要全部计算遍距离。 算法参数其算法参数是k, 参数选择需要根据数据来决定。k 值越大，模型的偏差越大，对噪声数据越不敏感，当 k 值很大时 可能造成模型欠拟合，k 值越小，模型的方差就会越大，当k 值太小， 就会造成模型过拟合。 算法的变种k-近邻算法有一些变种，其中之一就是可以增加邻居的权重。默认情况下，在计算距离时，都是使用相同权重。实际上，我们可以针对不同的邻居指定不同的距离权，如距离越近权重越高。这个可以通过指定算法的 weights 参数来实现。另外一个变种是使用一定半径内的点取代距离最近的k个点。在 sc ikit-learn 中 RadiusNeighborsClassifier 类实现了这个算法的变种。当数据采样不均匀时 该算法变种可以取得更好的性能 sklearn中的Knn生成已经标记的数据12345678910111213%matplotlib inlineimport matplotlib.pyplot as pltimport numpy as npfrom sklearn.datasets.samples_generator import make_blobscenters = [[-2, 2], [2, 2], [0, 4]]X, y = make_blobs(n_samples=60, centers=centers, random_state=0, cluster_std=0.60)plt.figure(figsize=(16, 10))c = np.array(centers)plt.scatter(X[:, 0], X[:, 1], c=y, s=100, cmap=&apos;cool&apos;); plt.scatter(c[:, 0], c[:, 1], s=100, marker=&apos;^&apos;, c=&apos;orange&apos;); 代码解读 1-4行导入所需要的包 6行设置中心点数据 7行使用 make_blobs 生成数据集。生 60 个训练样本，这 60 样本分布在以 centers 参数指定中心点周围。cluster std 是标准差，用来指明生成的点分布的松散程度。生成的训练数据集 X 放在变量里面，数据集的类别标记放在Y里面 12行画出样本，具体的画图操作以及参数前几天有篇博文讲到了 13行画出中心点使用 KNeighborsC lassifier 进行预测123456789101112131415161718192021from sklearn.neighbors import KNeighborsClassifier# 模型训练k = 5clf = KNeighborsClassifier(n_neighbors=k)clf.fit(X, y);# 进行预测X_sample = [0, 2]X_sample = np.array(X_sample).reshape(1, -1)y_sample = clf.predict(X_sample);neighbors = clf.kneighbors(X_sample, return_distance=False);# 画出示意图plt.figure(figsize=(16, 10))plt.scatter(X[:, 0], X[:, 1], c=y, s=100, cmap=&apos;cool&apos;) # 样本plt.scatter(c[:, 0], c[:, 1], s=100, marker=&apos;^&apos;, c=&apos;k&apos;) # 中心点plt.scatter(X_sample[0][0], X_sample[0][1], marker=&quot;x&quot;, s=100, cmap=&apos;cool&apos;) # 待预测的点for i in neighbors[0]: # 预测点与距离最近的 5 个样本的连线 plt.plot([X[i][0], X_sample[0][0]], [X[i][1], X_sample[0][1]], &apos;k--&apos;, linewidth=0.6); 从图中我们也可以看到K-近邻算法的原理 总结前边写了KNN的分类问题，之前我们说过KNN还可以用于回归问题，如果有兴趣可以自己搞一下。进行回归拟合的算法是 sklearn.neighbors.KNeighborsRegressor 类。]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>scikit-learn</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[《上瘾》学习笔记]]></title>
     <url>%2F2019%2F03%2F29%2F1%2F</url>
     <content type="text"><![CDATA[简介一旦成功地使用户对产品形成了使用习惯，企业就能获益匪浅，具体的变现在： 更高的用户终身价值 更大的价格灵活性 更快速的增长 更强的竞争优势 《上瘾》中总结了一套“上瘾模型”，可以让用户对产品连续循环，让用户不知不觉依赖上产品。 上瘾模式 触发: 促使做出某种举动的诱惑 行动: 对某种回报心怀期待的情况下做出的举动 多变的酬赏： 激发人们对某种事物的强烈渴望 投入： 提高用户以后再次进入上瘾循环的概率 思维导图]]></content>
@@ -176,6 +164,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[“抄袭”中杀出的中国互联网]]></title>
+    <url>%2F2018%2F11%2F02%2F1%2F</url>
+    <content type="text"><![CDATA[一代互联网，半部抄袭史在中国第一波互联网发展热潮中，什么都可以模仿。在那个年代，模仿存在于各个行业。甚至连公司的命名方式都在模仿。中国的第一个搜索引擎建立者张朝阳把自己的公司命名为 “Sohoo”，仿照了 “Yahoo”。《福布斯》曾经在一篇报道中把美团点评创始人王兴称为“克隆家”。因为王兴的三家创业公司校内、饭否和美团，创立时分别模仿当时硅谷最红的创业公司脸书、推特和Groupon。我们可以简单的梳理一下互联网产品：QQ抄袭ICQ、微信抄袭KIKI、淘宝抄袭ebay，支付宝抄袭paypal、百度抄袭谷歌、微博抄袭tiwtter、优酷抄袭Youtube、美团抄袭Groupon、滴滴抄袭uber。在很多人(包括我很早的时候)的认知里，中国互联网的成功来源与中国政策对外来企业的限制。在后来学习的过程中，我为自己当年的无知感到羞愧。中国的众多互联网企业家创造了值得我们尊重的企业。前不久，百度因为某些事件上了微博热搜，许多人认为，如果不是谷歌因为被迫退出中国市场，哪有百度？李彦宏发朋友圈：这些年来，百度一直被认为是占了Google退出中国的便宜。百度无法证明一件没有发生的事情。如果现在Google回来，我们正好可以真刀真枪的再PK一次，再赢一次。。 中国人更懂中国人我们简单的来看一下互联网产品发展历史，就可以明白这种说法的局限性。 OICQ 与 ICQ腾讯被著称以抄袭起家。QQ 的前身 OICQ 抄的就是 ICQ。在 OICQ 开发的过程，ICQ 已经成熟，并且进入了中国市场，在市面上，还有几种 汉化版的 OICQ。腾讯在这场战役中取得胜利。OICQ 的胜利来自于一系列细微的创意和设计,来自于腾讯更懂中国市场。比如中国个人电脑普及率很低，大多数都在网吧使用 OICQ 换一台电脑，用户信息就会丢失，腾讯把用户信息好友名单放到了后台，这样就不会丢失。等等一系列技术的微创新彻底击败了其他通讯软件。 QQ 与 MSN2000年4月,腾讯为了避免与ICQ间的纠纷，腾讯公司决定全面更换OICQ的名称，改称我们熟悉的“腾讯QQ”。那年我 5 岁，不知道 腾讯 不知道 QQ。2005年。MSN在没有任何支持与宣传的情况下市场份额为 10.85%。QQ 为77.8%。同时微软宣布本土化作战。10月13日，微软与雅虎宣布合作使其全球的即时通信用户之间都能实现互联互通。并且向腾讯发出邀请，马化腾坚决的拒绝。最终的结局又是 QQ 的胜利。 淘宝 与 eBAY2003年3月，eBay收购中国最大的在线交易社区易趣网。与此同时，马云创办淘宝网。两者爆发对抗性的抗争。淘宝网的核心武器”基本功能免费+增值功能收费”，当时的eBay上发布商品需要收费，商品售出收费，PayPal 付款收费。eBay的“免费不是商业模式”决定了它在中国的命运。 百度 与 谷歌“天下苦百度久矣”。百度的竞价排名让如今的中国人抱怨连天。百度核心功能和极简主义的设计风格借鉴了谷歌。但是其中有很多细小的差异化。在我体验百度和谷歌功能的时候，有一点印象特别深刻：谷歌是用户点击一个搜索结果，就会离开搜索界面。百度则是点击搜索结果开启一个新的界面，依旧可以返回原有的结果。在营收上谷歌采取的是关键词广告，根据用户的浏览或者搜索将特定广告放到用户面前。百度则是我们熟悉的竞价排名。谷歌搜索在2005年进入中国到2010年被迫离开，都未能赶超百度。 这样的例子多不胜数，Hotmail与网易邮箱，亚马逊与当当，滴滴和Uber，美团与Groupon。我们在总结分析的时候，不要只是认为是中国政策对本土企业的保护的原因，更是要看到中国企业在斗争时不断地微创新，这种创新是无可比拟的。 折戟沉沙的硅谷在国外巨头本土化作战中国的时候，谷歌启用李开复对标百度。微软罗川用 msn 作战 QQ。MSN,谷歌相继失败后，作为两个产品的中国区负责人李开复和罗川有着相应的心情。MSN 和谷歌的每一项功能的开发都需要到美国总部进行论证，当投入研发时，用户早已流失。硅谷不投入资源，团队没有自由，产品的核心功能产品不为中国用户妥协。在以上帝的角度看来，国外巨头在中国本土化作战如果启用一个新的产品，用硅谷高端的技术，充沛的资金去铺路，结果可能或许不一样。事实证明，硅谷的全球一体化产品在中国并不适用。在黑头发，黑眼睛，黄皮肤的眼里，外来的和尚不一定好念经，显然本土企业更懂他们。最后，借用刚开始李彦宏的一句话:”如果硅谷企业重回中国，真刀真枪的再PK一次，我们还会再赢一次。” 阅读《腾讯传》，《AI 未来》有感]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[推荐系统中的数据挖掘方法]]></title>
     <url>%2F2018%2F07%2F14%2F1%2F</url>
     <content type="text"><![CDATA[1. 推荐系统中的数据挖掘方法概览&emsp;&emsp;数据挖掘过程一般是由三个连续的执行步骤组成，本章不会过多的介绍这些方法，只是做一个总结，详细的过程以及公式推导建议大家去阅读《统计学方法》以及《推荐系统 技术、评估及高效算法》。。]]></content>
@@ -222,6 +218,18 @@
       <tags>
         <tag>推荐系统</tag>
         <tag>思维导图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[scikit-learn机器学习之K-近邻算法]]></title>
+    <url>%2F2018%2F03%2F14%2F1%2F</url>
+    <content type="text"><![CDATA[k－近邻算法 它是一个有监督的机器学习算法。近邻算法也称为 Knn 法，可以解决分类问题，也可以解决回归问题。 ##算法原理K－近邻算法的核心思想是未标记样本的类别，由距离其最近 个邻居投票来决定。假设，我们有一个已经标记的数据集，即己经知道了数据集中每个样本所属的类别此时，有一个未标记的数据样本，我们的任务是预测出这个数据样本所属的类别 ，近邻算法的原理是，计算待标记的数据样本和数据集中每个样本的距离，取距离最近的 k 个样本。待标记的数据样本所属的类别，就由这 k 个距离 近的样本投票产生。假设 test数据集 待标记的数据样本， train数据集为己标记的数据集，算法原理的伪代码如下： 遍历 train 中的所有样本，计算每个样本与 test 的距离，并且把距离保存在 Distance 数组中。 对 Distance 数组进行排序，取距离最近的K个点，为X_Knn。 在 X_knn 中统计每个类别的数量。比如 class 0 在 X_Knn 中几个样本等。 待标记样本的类别，就是在X_knn中样本个数最多的那个。##算法优缺点优点：准确性高，对异常值和 噪声有较高的容忍度缺点：计算量较大，对内存的需求也较大。从算法原理可以看出来，每次对一个未标记样本进行分类时，都需要全部计算遍距离。 算法参数其算法参数是k, 参数选择需要根据数据来决定。k 值越大，模型的偏差越大，对噪声数据越不敏感，当 k 值很大时 可能造成模型欠拟合，k 值越小，模型的方差就会越大，当k 值太小， 就会造成模型过拟合。 算法的变种k-近邻算法有一些变种，其中之一就是可以增加邻居的权重。默认情况下，在计算距离时，都是使用相同权重。实际上，我们可以针对不同的邻居指定不同的距离权，如距离越近权重越高。这个可以通过指定算法的 weights 参数来实现。另外一个变种是使用一定半径内的点取代距离最近的k个点。在 sc ikit-learn 中 RadiusNeighborsClassifier 类实现了这个算法的变种。当数据采样不均匀时 该算法变种可以取得更好的性能 sklearn中的Knn生成已经标记的数据12345678910111213%matplotlib inlineimport matplotlib.pyplot as pltimport numpy as npfrom sklearn.datasets.samples_generator import make_blobscenters = [[-2, 2], [2, 2], [0, 4]]X, y = make_blobs(n_samples=60, centers=centers, random_state=0, cluster_std=0.60)plt.figure(figsize=(16, 10))c = np.array(centers)plt.scatter(X[:, 0], X[:, 1], c=y, s=100, cmap=&apos;cool&apos;); plt.scatter(c[:, 0], c[:, 1], s=100, marker=&apos;^&apos;, c=&apos;orange&apos;); 代码解读 1-4行导入所需要的包 6行设置中心点数据 7行使用 make_blobs 生成数据集。生 60 个训练样本，这 60 样本分布在以 centers 参数指定中心点周围。cluster std 是标准差，用来指明生成的点分布的松散程度。生成的训练数据集 X 放在变量里面，数据集的类别标记放在Y里面 12行画出样本，具体的画图操作以及参数前几天有篇博文讲到了 13行画出中心点使用 KNeighborsC lassifier 进行预测123456789101112131415161718192021from sklearn.neighbors import KNeighborsClassifier# 模型训练k = 5clf = KNeighborsClassifier(n_neighbors=k)clf.fit(X, y);# 进行预测X_sample = [0, 2]X_sample = np.array(X_sample).reshape(1, -1)y_sample = clf.predict(X_sample);neighbors = clf.kneighbors(X_sample, return_distance=False);# 画出示意图plt.figure(figsize=(16, 10))plt.scatter(X[:, 0], X[:, 1], c=y, s=100, cmap=&apos;cool&apos;) # 样本plt.scatter(c[:, 0], c[:, 1], s=100, marker=&apos;^&apos;, c=&apos;k&apos;) # 中心点plt.scatter(X_sample[0][0], X_sample[0][1], marker=&quot;x&quot;, s=100, cmap=&apos;cool&apos;) # 待预测的点for i in neighbors[0]: # 预测点与距离最近的 5 个样本的连线 plt.plot([X[i][0], X_sample[0][0]], [X[i][1], X_sample[0][1]], &apos;k--&apos;, linewidth=0.6); 从图中我们也可以看到K-近邻算法的原理 总结前边写了KNN的分类问题，之前我们说过KNN还可以用于回归问题，如果有兴趣可以自己搞一下。进行回归拟合的算法是 sklearn.neighbors.KNeighborsRegressor 类。]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>scikit-learn</tag>
       </tags>
   </entry>
   <entry>

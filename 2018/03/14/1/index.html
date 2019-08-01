@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="蒙旭东">
+  <meta name="keywords" content="机器学习,scikit-learn,">
 
 
 
@@ -81,17 +81,21 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;本文主要是对推荐系统中常用的常用算法的适用性以及优劣做一个总结，以让自己有一个更加清晰的认识，不会涉及公式以及算法的实现。 1 基于近邻推荐方法综述&amp;emsp;&amp;emsp;基于领域的推荐方法中主要包括了两种著名的推荐方法：基于用户的推荐和基于物品的推荐。在基于用户的推荐系统中，目标用户对某一物品的感兴趣程度是利用对该物品的历史评分，并且和目标用户有相似评分模式的其他用户来估">
+<meta name="description" content="k－近邻算法 它是一个有监督的机器学习算法。近邻算法也称为 Knn 法，可以解决分类问题，也可以解决回归问题。   ##算法原理K－近邻算法的核心思想是未标记样本的类别，由距离其最近 个邻居投票来决定。假设，我们有一个已经标记的数据集，即己经知道了数据集中每个样本所属的类别此时，有一个未标记的数据样本，我们的任务是预测出这个数据样本所属的类别 ，近邻算法的原理是，计算待标记的数据样本和数据集中每个">
+<meta name="keywords" content="机器学习,scikit-learn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于近邻推荐方法综述">
-<meta property="og:url" content="http://yoursite.com/2018/07/01/1/index.html">
+<meta property="og:title" content="scikit-learn机器学习之K-近邻算法">
+<meta property="og:url" content="http://yoursite.com/2018/03/14/1/index.html">
 <meta property="og:site_name" content="Meng Xu Dong">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;本文主要是对推荐系统中常用的常用算法的适用性以及优劣做一个总结，以让自己有一个更加清晰的认识，不会涉及公式以及算法的实现。 1 基于近邻推荐方法综述&amp;emsp;&amp;emsp;基于领域的推荐方法中主要包括了两种著名的推荐方法：基于用户的推荐和基于物品的推荐。在基于用户的推荐系统中，目标用户对某一物品的感兴趣程度是利用对该物品的历史评分，并且和目标用户有相似评分模式的其他用户来估">
+<meta property="og:description" content="k－近邻算法 它是一个有监督的机器学习算法。近邻算法也称为 Knn 法，可以解决分类问题，也可以解决回归问题。   ##算法原理K－近邻算法的核心思想是未标记样本的类别，由距离其最近 个邻居投票来决定。假设，我们有一个已经标记的数据集，即己经知道了数据集中每个样本所属的类别此时，有一个未标记的数据样本，我们的任务是预测出这个数据样本所属的类别 ，近邻算法的原理是，计算待标记的数据样本和数据集中每个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-03T16:12:49.627Z">
+<meta property="og:image" content="http://yoursite.com/images/knn1.PNG">
+<meta property="og:image" content="http://yoursite.com/images/knn2.PNG">
+<meta property="og:updated_time" content="2019-08-01T02:01:29.479Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于近邻推荐方法综述">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本文主要是对推荐系统中常用的常用算法的适用性以及优劣做一个总结，以让自己有一个更加清晰的认识，不会涉及公式以及算法的实现。 1 基于近邻推荐方法综述&amp;emsp;&amp;emsp;基于领域的推荐方法中主要包括了两种著名的推荐方法：基于用户的推荐和基于物品的推荐。在基于用户的推荐系统中，目标用户对某一物品的感兴趣程度是利用对该物品的历史评分，并且和目标用户有相似评分模式的其他用户来估">
+<meta name="twitter:title" content="scikit-learn机器学习之K-近邻算法">
+<meta name="twitter:description" content="k－近邻算法 它是一个有监督的机器学习算法。近邻算法也称为 Knn 法，可以解决分类问题，也可以解决回归问题。   ##算法原理K－近邻算法的核心思想是未标记样本的类别，由距离其最近 个邻居投票来决定。假设，我们有一个已经标记的数据集，即己经知道了数据集中每个样本所属的类别此时，有一个未标记的数据样本，我们的任务是预测出这个数据样本所属的类别 ，近邻算法的原理是，计算待标记的数据样本和数据集中每个">
+<meta name="twitter:image" content="http://yoursite.com/images/knn1.PNG">
 
 
 
@@ -121,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/01/1/">
+  <link rel="canonical" href="http://yoursite.com/2018/03/14/1/">
 
 
 
 
 
-  <title>基于近邻推荐方法综述 | Meng Xu Dong</title>
+  <title>scikit-learn机器学习之K-近邻算法 | Meng Xu Dong</title>
   
 
 
@@ -423,7 +427,7 @@ window.onmouseout = function () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/01/1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ben">
@@ -440,7 +444,7 @@ window.onmouseout = function () {
 
         
         
-          <h2 class="post-title" itemprop="name headline">基于近邻推荐方法综述</h2>
+          <h2 class="post-title" itemprop="name headline">scikit-learn机器学习之K-近邻算法</h2>
         
 
         <div class="post-meta">
@@ -452,8 +456,8 @@ window.onmouseout = function () {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-01T00:10:38+08:00">
-                2018-07-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T01:29:26+08:00">
+                2018-03-14
               </time>
             
 
@@ -475,8 +479,8 @@ window.onmouseout = function () {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/推荐系统/" itemprop="url" rel="index">
-                    <span itemprop="name">推荐系统</span>
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
                   </a>
                 </span>
 
@@ -506,7 +510,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.7k 字
+                  1.1k 字
                 </span>
               
 
@@ -522,7 +526,7 @@ window.onmouseout = function () {
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -543,26 +547,30 @@ window.onmouseout = function () {
       
 
       
-        <p>&emsp;&emsp;本文主要是对推荐系统中常用的常用算法的适用性以及优劣做一个总结，以让自己有一个更加清晰的认识，不会涉及公式以及算法的实现。</p>
-<h2 id="1-基于近邻推荐方法综述"><a href="#1-基于近邻推荐方法综述" class="headerlink" title="1 基于近邻推荐方法综述"></a>1 基于近邻推荐方法综述</h2><p>&emsp;&emsp;基于领域的推荐方法中主要包括了两种著名的推荐方法：基于用户的推荐和基于物品的推荐。在基于用户的推荐系统中，目标用户对某一物品的感兴趣程度是利用对该物品的历史评分，并且和目标用户有相似评分模式的其他用户来估计的。这里的目标用户的近邻是指与目标用户评分模式很一致的用户。基于物品的推荐系统，是根据某一用户对相似于目标物品的评分来预测该用户对目标物品的评分。在这种方法中，相似物品指那些被同一组用户评分并且评分值相近的物品。</p>
-<h2 id="2-基于近邻的两种推荐方法"><a href="#2-基于近邻的两种推荐方法" class="headerlink" title="2 基于近邻的两种推荐方法"></a>2 基于近邻的两种推荐方法</h2><p>&emsp;&emsp;基于领域的推荐系统是根据相同的“口碑”的准则，根据和用户兴趣相同的人或者根据其他可信源来评价一个物品。</p>
-<h4 id="2-1-基于用户和基于物品的推荐方法的比较"><a href="#2-1-基于用户和基于物品的推荐方法的比较" class="headerlink" title="2.1 基于用户和基于物品的推荐方法的比较"></a>2.1 基于用户和基于物品的推荐方法的比较</h4><p>&emsp;&emsp;当需要选择是基于用户还是基于物品的推荐方法来实现推荐系统的时候，有5个准则需要考虑：</p>
+        <p>k－近邻算法 它是一个有监督的机器学习算法。近邻算法也称为 Knn 法，可以解决分类问题，也可以解决回归问题。  </p>
+<p>##算法原理<br>K－近邻算法的核心思想是未标记样本的类别，由距离其最近 个邻居投票来决定。<br>假设，我们有一个已经标记的数据集，即己经知道了数据集中每个样本所属的类别此时，有一个未标记的数据样本，我们的任务是预测出这个数据样本所属的类别 ，近邻算法的原理是，计算待标记的数据样本和数据集中每个样本的距离，取距离最近的 k 个样本。待标记的数据样本所属的类别，就由这 k 个距离 近的样本投票产生。<br>假设 test数据集 待标记的数据样本， train数据集为己标记的数据集，算法原理的伪代码如下：</p>
 <ul>
-<li><strong>准确性</strong> : 推荐系统的准确度很大程度依赖于系统中用户数和物品数之间的比例。<br>通常，一小部分高可信度的用户要比一大部分相似度不是那么可信的近邻要合适的多，对于用户数量远远大于物品数量的大型商业系统，基于物品的推荐西永更加准确。同样对于用户数少与物品的推荐系统来说，可能采用基于用户的推荐系统更加准确。</li>
-<li><strong>效率</strong>：当用户数量远远大于物品数量时，基于物品推进方法在计算相似度权重方面所需的内存和时间要远远小于基于用户的方法，但是在线推荐阶段的时间复杂度因为只依赖于有效的物品和近邻数量的最大值，所以两者是相同的。</li>
-<li><strong>稳定性</strong> 稳定性主要取决于用户或者物品的改变频率和数量。</li>
-<li><strong>合理性</strong> 基于物品的推荐方法优点是容易证明推荐的合理性。基于用户的推荐系统就很难坐到这一点，因为用户不认识在在推荐结果中起到近邻作用的其他用户。</li>
-<li><strong>惊喜度</strong> 基于用户的推荐方法是根据用户的相似度来进行的，因此更有可能生成较为新颖的推荐结果，当推荐是基于很小部分近邻数更为有效。<h4 id="2-2-基于近邻方法的要素"><a href="#2-2-基于近邻方法的要素" class="headerlink" title="2.2 基于近邻方法的要素"></a>2.2 基于近邻方法的要素</h4>&emsp;&emsp;在近邻推荐系统中除了选择基于物品还是用户的推荐方法还存在一些重要属性比如:1)标准化评分;2)相似权重的计算;3)近邻的选择。<h5 id="2-2-1-评分标准化"><a href="#2-2-1-评分标准化" class="headerlink" title="2.2.1 评分标准化"></a>2.2.1 评分标准化</h5>&emsp;&emsp;当一个用户对一个物品给予评分的时候，每个用户都有自己的评价准则。即使显示地定义每个评分的意义，有些用户依然不情愿给他们呢的物品评高分或者给他们不喜欢的物品评低分。均值中心化和Z-socre标准化可以将个人评分标准转换到更一般的整体评分标准。</li>
-<li><strong>均值中心化</strong>：通过与平均分的比较来决定一个评分为正或者负。</li>
-<li><strong>Z-score标准化</strong>：考虑个人评分范围不同带来的差异性。比如：用户 A 和用户 B 平均评分都是3，但是假设用户 A 的评分在1-5之间，用户 B 都是3。如果用户 B 给物品评5分，这会比用户 A 给物品5分更加以意外。因此反映了用户 B 更加喜欢这个物品。<br>&emsp;&emsp;对比两者，Z-score在处理范围很大的离散评分或者连续值评分时更有优势。<h5 id="2-2-2-相似度权重的计算"><a href="#2-2-2-相似度权重的计算" class="headerlink" title="2.2.2 相似度权重的计算"></a>2.2.2 相似度权重的计算</h5>&emsp;&emsp;相似度权重计算在基于领域的推荐方法中扮演者重要的角色:1)可以选择可信的近邻用户用于评测评分；2）给予不同近邻在预测中的权重。计算相似度权重是基于近邻推荐系统中最重要的一个方面，他可以直接影响准确性和性能。具体的相似度计算方法本文略过，我们平常使用的余弦相似度扩展一下都可以。<h5 id="2-2-2-领域的选择"><a href="#2-2-2-领域的选择" class="headerlink" title="2.2.2 领域的选择"></a>2.2.2 领域的选择</h5><h5 id="2-2-2-1-领域的选择"><a href="#2-2-2-1-领域的选择" class="headerlink" title="2.2.2.1 领域的选择"></a>2.2.2.1 领域的选择</h5>&emsp;&emsp;在大型的推荐系统中，由于硬件资源的限制，它不太可能存储所有的非零相似度。我们可以通过下边的方法来进行限制。</li>
-<li><strong>top-N过滤</strong></li>
-<li><strong>阈值过滤</strong></li>
-<li><strong>负值过滤</strong><h5 id="2-2-2-2-用于预测的近邻"><a href="#2-2-2-2-用于预测的近邻" class="headerlink" title="2.2.2.2 用于预测的近邻"></a>2.2.2.2 用于预测的近邻</h5>&emsp;&emsp;一旦计算出每个用户或者物品的候选近邻列表，对一个新的评分预测可以通过k近邻方法得到，K 近邻也就是相似度权重对打的K个近邻。最重要的问题就是如何选择 K 值。<br>&emsp;&emsp;K值的增加通常呈现出一个凸函数。因此当近邻数目限制一个很小的数的时候，预测度通常会低。当 K 很大的时候，一些重要的关联被一些不重要的关联所削弱。如何选择一个最优 K 值是我们优先考虑的问题。<h4 id="2-3-基于近邻的推荐方法优化"><a href="#2-3-基于近邻的推荐方法优化" class="headerlink" title="2.3 基于近邻的推荐方法优化"></a>2.3 基于近邻的推荐方法优化</h4>&emsp;&emsp;基于近邻的推荐方法依然存在缺点：</li>
-<li><strong>覆盖受限</strong>：由于计算两个用户间的相似是基于他们对相同物品的评分，而且只有对相同物品进行评分的用户才可以作为近邻，所以覆盖受限。</li>
-<li><strong>对稀疏数据敏感</strong>：稀疏性是大多数推荐熊面临的共同问题，尤其面对冷启动问题，稀疏性更加严重。<br>&emsp;&emsp;本文在这里列举两个方法，具体的方法和实现可以查阅相关文献:</li>
-<li><strong>基于图的方法</strong></li>
-<li><strong>基于学习的方法</strong></li>
+<li>遍历 train 中的所有样本，计算每个样本与 test 的距离，并且把距离保存在 Distance 数组中。</li>
+<li>对 Distance 数组进行排序，取距离最近的K个点，为X_Knn。</li>
+<li>在 X_knn 中统计每个类别的数量。比如 class 0 在 X_Knn 中几个样本等。</li>
+<li>待标记样本的类别，就是在X_knn中样本个数最多的那个。<br>##算法优缺点<br><strong>优点：</strong>准确性高，对异常值和 噪声有较高的容忍度<br><strong>缺点：</strong>计算量较大，对内存的需求也较大。从算法原理可以看出来，每次对一个未标记样本进行分类时，都需要全部计算遍距离。</li>
 </ul>
+<h2 id="算法参数"><a href="#算法参数" class="headerlink" title="算法参数"></a>算法参数</h2><p>其算法参数是k, 参数选择需要根据数据来决定。k 值越大，模型的偏差越大，对噪声数据越不敏感，当 k 值很大时 可能造成模型欠拟合，k 值越小，模型的方差就会越大，当k 值太小， 就会造成模型过拟合。</p>
+<h2 id="算法的变种"><a href="#算法的变种" class="headerlink" title="算法的变种"></a>算法的变种</h2><p>k-近邻算法有一些变种，其中之一就是可以增加邻居的权重。默认情况下，在计算距离时，都是使用相同权重。实际上，我们可以针对不同的邻居指定不同的距离权，如距离越近权重越高。这个可以通过指定算法的 <strong>weights</strong> 参数来实现。<br>另外一个变种是使用一定半径内的点取代距离最近的k个点。在 sc ikit-learn 中 RadiusNeighborsClassifier 类实现了这个算法的变种。当数据采样不均匀时 该算法变种可以取得更好的性能</p>
+<h2 id="sklearn中的Knn"><a href="#sklearn中的Knn" class="headerlink" title="sklearn中的Knn"></a>sklearn中的Knn</h2><h3 id="生成已经标记的数据"><a href="#生成已经标记的数据" class="headerlink" title="生成已经标记的数据"></a>生成已经标记的数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import numpy as np</span><br><span class="line">from sklearn.datasets.samples_generator import make_blobs</span><br><span class="line"></span><br><span class="line">centers = [[-2, 2], [2, 2], [0, 4]]</span><br><span class="line">X, y = make_blobs(n_samples=60, centers=centers, random_state=0, cluster_std=0.60)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(16, 10))</span><br><span class="line">c = np.array(centers)</span><br><span class="line">plt.scatter(X[:, 0], X[:, 1], c=y, s=100, cmap=&apos;cool&apos;);         </span><br><span class="line">plt.scatter(c[:, 0], c[:, 1], s=100, marker=&apos;^&apos;, c=&apos;orange&apos;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/knn1.PNG" alt></p>
+<h4 id="代码解读"><a href="#代码解读" class="headerlink" title="代码解读"></a>代码解读</h4><ul>
+<li>1-4行导入所需要的包</li>
+<li>6行设置中心点数据</li>
+<li>7行使用 make_blobs 生成数据集。生 60 个训练样本，这 60 样本分布在以 centers 参数指定中心点周围。cluster std 是标准差，用来指明生成的点分布的松散程度。生成的训练数据集 X 放在变量里面，数据集的类别标记放在Y里面</li>
+<li>12行画出样本，具体的画图操作以及参数前几天有篇博文讲到了</li>
+<li>13行画出中心点<h3 id="使用-KNeighborsC-lassifier-进行预测"><a href="#使用-KNeighborsC-lassifier-进行预测" class="headerlink" title="使用 KNeighborsC lassifier 进行预测"></a>使用 KNeighborsC lassifier 进行预测</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">from sklearn.neighbors import KNeighborsClassifier</span><br><span class="line"># 模型训练</span><br><span class="line">k = 5</span><br><span class="line">clf = KNeighborsClassifier(n_neighbors=k)</span><br><span class="line">clf.fit(X, y);</span><br><span class="line"># 进行预测</span><br><span class="line">X_sample = [0, 2]</span><br><span class="line">X_sample = np.array(X_sample).reshape(1, -1)</span><br><span class="line">y_sample = clf.predict(X_sample);</span><br><span class="line">neighbors = clf.kneighbors(X_sample, return_distance=False);</span><br><span class="line"># 画出示意图</span><br><span class="line">plt.figure(figsize=(16, 10))</span><br><span class="line">plt.scatter(X[:, 0], X[:, 1], c=y, s=100, cmap=&apos;cool&apos;)    # 样本</span><br><span class="line">plt.scatter(c[:, 0], c[:, 1], s=100, marker=&apos;^&apos;, c=&apos;k&apos;)   # 中心点</span><br><span class="line">plt.scatter(X_sample[0][0], X_sample[0][1], marker=&quot;x&quot;, </span><br><span class="line">            s=100, cmap=&apos;cool&apos;)    # 待预测的点</span><br><span class="line"></span><br><span class="line">for i in neighbors[0]:</span><br><span class="line">    # 预测点与距离最近的 5 个样本的连线</span><br><span class="line">    plt.plot([X[i][0], X_sample[0][0]], [X[i][1], X_sample[0][1]], </span><br><span class="line">             &apos;k--&apos;, linewidth=0.6);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="/images/knn2.PNG" alt><br>从图中我们也可以看到K-近邻算法的原理</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>前边写了KNN的分类问题，之前我们说过KNN还可以用于回归问题，如果有兴趣可以自己搞一下。进行回归拟合的算法是 sklearn.neighbors.KNeighborsRegressor 类。</p>
 
       
     </div>
@@ -607,6 +615,14 @@ window.onmouseout = function () {
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i>机器学习</a>
+          
+            <a href="/tags/scikit-learn/" rel="tag"><i class="fa fa-tag"></i>scikit-learn</a>
+          
+        </div>
+      
 
       
       
@@ -616,8 +632,8 @@ window.onmouseout = function () {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/01/1/" rel="next" title="算法之路-常见字符串处理总结">
-                <i class="fa fa-chevron-left"></i> 算法之路-常见字符串处理总结
+              <a href="/2018/03/12/1/" rel="next" title="机器学习查准率和召回率">
+                <i class="fa fa-chevron-left"></i> 机器学习查准率和召回率
               </a>
             
           </div>
@@ -626,8 +642,8 @@ window.onmouseout = function () {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/04/1/" rel="prev" title="基于内容的语义感知系统">
-                基于内容的语义感知系统 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/06/1/" rel="prev" title="推荐系统思维导图与架构">
+                推荐系统思维导图与架构 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -797,7 +813,7 @@ window.onmouseout = function () {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-基于近邻推荐方法综述"><span class="nav-text">1 基于近邻推荐方法综述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-基于近邻的两种推荐方法"><span class="nav-text">2 基于近邻的两种推荐方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-基于用户和基于物品的推荐方法的比较"><span class="nav-text">2.1 基于用户和基于物品的推荐方法的比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-基于近邻方法的要素"><span class="nav-text">2.2 基于近邻方法的要素</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-1-评分标准化"><span class="nav-text">2.2.1 评分标准化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-2-相似度权重的计算"><span class="nav-text">2.2.2 相似度权重的计算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-2-领域的选择"><span class="nav-text">2.2.2 领域的选择</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-2-1-领域的选择"><span class="nav-text">2.2.2.1 领域的选择</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-2-2-用于预测的近邻"><span class="nav-text">2.2.2.2 用于预测的近邻</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-基于近邻的推荐方法优化"><span class="nav-text">2.3 基于近邻的推荐方法优化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法参数"><span class="nav-text">算法参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法的变种"><span class="nav-text">算法的变种</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sklearn中的Knn"><span class="nav-text">sklearn中的Knn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成已经标记的数据"><span class="nav-text">生成已经标记的数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码解读"><span class="nav-text">代码解读</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-KNeighborsC-lassifier-进行预测"><span class="nav-text">使用 KNeighborsC lassifier 进行预测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
